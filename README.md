@@ -32,7 +32,7 @@ Andrew Gauger
 * Food box distribution center's scheduling application which manages points of distribution, calendar, and custom recurrences.
 
 ### Ruby
-* [Engineer](www.rejuvenation.com) providing release management, code review, back-end development, emergency troubleshooting, architect
+* [Engineer](http://www.rejuvenation.com) providing release management, code review, back-end development, emergency troubleshooting, architect
 * New Relic custom metric collection service, performance profiling and reporting, ties to deployment to equate code change to performance win.
 * Chef leveraging OpenStack, Chef-server (open, hosted); integrated provisioning and deployment.  Designed to scale n:1 through 1:n.
 
