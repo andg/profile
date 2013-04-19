@@ -11,7 +11,7 @@ tar -xvf fink-0.34.7.tar.gz
 cd fink-0.34.7
 ./bootstrap
 ``` 
- ### replaced this line in the config file for unstable
+### replaced this line in the config file for unstable
 ```bash
 vi /sw/etc/fink.conf
 ```
