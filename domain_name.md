@@ -7,4 +7,3 @@ vi CNAME
 git add CNAME
 git commit -a -m "domain name andrewgauger.com"
 git push origin
-'''
