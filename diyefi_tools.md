@@ -1,43 +1,32 @@
-### Setting up tools on mac 10.8.2
+## Setting up tools on mac 10.8.2
 
-## update xcode in app store
-## installed command line tools using preferences
-
+### update xcode in app store
+### installed command line tools using preferences
 ```bash
 sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 ```
-## download from [sourceforge - Fink](http://sourceforge.net/projects/fink/)
-
+### download from [sourceforge - Fink](http://sourceforge.net/projects/fink/)
 ```bash
 tar -xvf fink-0.34.7.tar.gz
 cd fink-0.34.7
 ./bootstrap
 ``` 
- 
+ ### replaced this line in the config file for unstable
 ```bash
 vi /sw/etc/fink.conf
 ```
-
-## replaced this line:
-
 ```
 Trees: local/main stable/main unstable/main unstable/crypto
 ```
-
-## Configure fink with mainly defaults, increased verbosity
-
+### Configure fink with mainly defaults, increased verbosity
 ```bash
 /sw/bin/pathsetup.sh
 ```
-
-## Reload Bash.  I do think by opening a new tab in iTerm, some people use the following
-
+### Reload Bash.  I do think by opening a new tab in iTerm, some people use the following
 ```bash
 source ~/.bash_profile
 ```
-
-## Commands executed to install tools
-
+### Commands executed to install tools
 ```bash
 sudo sh -c 'curl http://tools.diyefi.org/FreeEMS-ToolChain-MacOSX-Fink.zip > /sw/fink/dists/local/main/finkinfo/FreeEMS-ToolChain-MacOSX-Fink.zip'
 cd /sw/fink/dists/local/main/finkinfo
