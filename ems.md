@@ -20,3 +20,5 @@
 2. Boost - extra pair for electric supercharger control
 3. IAC - Idle air control, sounds like the only new feature that I stand a chance at working on at first
 
+[diyefi post](http://forum.diyefi.org/viewtopic.php?f=41&t=2092)
+
