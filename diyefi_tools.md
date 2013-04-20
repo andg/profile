@@ -38,3 +38,5 @@ fink scanpackages
 fink install mc9xgate-binutils m68hc1x-newlib m68hc1x-binutils m68hc1x-gcc
 fink install make
 ```
+
+[teaser](http://forum.diyefi.org/viewtopic.php?f=41&t=2094&p=33583#p33583)
