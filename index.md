@@ -1,3 +1,8 @@
+---
+layout: default
+title: Andrew Gauger - Development history
+---
+
 Andrew Gauger
 =============
 
