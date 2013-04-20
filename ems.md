@@ -1,3 +1,7 @@
+---
+layout: default
+title: diyefi Andrew Gauger
+---
 ## Project Plan for Grand AM EMS replacement
 
 ### Harness
