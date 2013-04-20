@@ -31,3 +31,9 @@
 * TODO: Number of wires, harnesses
 * Distance from inside firewall to con1
 * Distance from outside firewall to split1
+
+[diyefi post](http://forum.diyefi.org/viewtopic.php?f=41&t=2092)
+
+## Next actions
+
+I'm going to the junkyard tomorrow and browsing the many 3400s they have in stock in the rainy North West where these things stock pile over the winter season.  I've already started pulling apart the 2004 that I replaced my injector harness.  It will be tough to pass up the leather seats since they are like $100 for the pair
