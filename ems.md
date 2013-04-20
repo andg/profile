@@ -42,3 +42,5 @@ title: diyefi Andrew Gauger
 * labeling sensors
 * tracing wires
 * determine printouts for 3 or more wires
+* injector sub connector has map injectors cht 
+* maf labeled
