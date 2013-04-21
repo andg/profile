@@ -44,6 +44,7 @@ title: diyefi Andrew Gauger
 * Distance from outside firewall to split1
 
 [diyefi post](http://forum.diyefi.org/viewtopic.php?f=41&t=2092)
+[pictures](http://forum.diyefi.org/viewtopic.php?f=41&t=2094)
 
 ## New Gm harness from junkyard
 * All required connectors labeled
