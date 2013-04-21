@@ -45,6 +45,7 @@ title: diyefi Andrew Gauger
 
 [diyefi post](http://forum.diyefi.org/viewtopic.php?f=41&t=2092)
 [pictures](http://forum.diyefi.org/viewtopic.php?f=41&t=2094)
+[DIS wiring](http://fazeshift.org/pics/albums/userpics/3100PCM/6E3-A-5.jpg)
 
 ## New Gm harness from junkyard
 * All required connectors labeled
