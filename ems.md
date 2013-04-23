@@ -2,6 +2,7 @@
 layout: default
 title: diyefi Andrew Gauger
 ---
+
 ## Project Plan for Grand AM EMS replacement
 
 ### Harness
@@ -50,3 +51,5 @@ title: diyefi Andrew Gauger
 ## New Gm harness from junkyard
 * All required connectors labeled
 * Researching pin outs of connectors
+* mapped out dis 4 pin 3 x calculated signal on dIS for jaguar board
+* ignition advance signal mapped possibly backwards
