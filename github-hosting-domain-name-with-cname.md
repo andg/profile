@@ -2,6 +2,7 @@
 layout: default
 title: Github hosting a domain name using a CNAME file by Andrew Gauger
 ---
+
 [github](https://help.github.com/articles/setting-up-a-custom-domain-with-pages) has a page for setting up domains.  I have a [CNAME file](https://github.com/andg/profile/blob/master/CNAME).
 
 ### andrewgauger.com
