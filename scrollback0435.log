@@ -1,0 +1,1977 @@
+````````````
+layout:	default
+---
+
+
+sudo /etc/ppp/ip-up
+ssh worker2
+sudo su -l git
+cd /var/www/rejuvenation/production
+bundle exec rails c production
+Last login: Tue Apr 23 07:50:03 on ttys002
+andg:~ andg$ sudo /etc/ppp/ip-up
+delete net 10.54.164.0: gateway 10.0.30.182
+add net 10.54.164.0: gateway 10.0.30.182
+andg:~ andg$ ssh worker2
+Last login: Mon Apr 22 14:42:38 2013 from 10.1.227.19
+sudo su -l git
+cd /var/www/rejuvenation/production
+bundle exec rails c production
+andrewgauger@worker2:~$ sudo su -l git
+git@worker2:~$ cd /var/www/rejuvenation/production
+git@worker2:/var/www/rejuvenation/production$ bundle exec rails c production
+Loading production environment (Rails 3.2.12)
+[1] pry(main)> Write failed: Broken pipe
+andg:~ andg$ ssh git@deploy1 deploy -E staging -i 4 -D web
+deploy1: web => staging1 (4)
+deploy1: mongo1 <=> staging1 (4)
+-----> [lock] touch /tmp/db-sync.4.lock
+-----> [mongo] Running 'mongodump -d rejuvenation_production'
+Fri Apr 26 10:07:53 starting new replica set monitor for replica set rejuvenation-ecommerce with seed of arbiter1,mongo1,mongo2
+Fri Apr 26 10:07:53 successfully connected to seed arbiter1 for replica set rejuvenation-ecommerce
+Fri Apr 26 10:07:53 changing hosts to { 0: "mongo2:27017", 1: "mongo1:27017" } from rejuvenation-ecommerce/
+Fri Apr 26 10:07:53 trying to add new host mongo1:27017 to replica set rejuvenation-ecommerce
+Fri Apr 26 10:07:53 successfully connected to new host mongo1:27017 in replica set rejuvenation-ecommerce
+Fri Apr 26 10:07:53 trying to add new host mongo2:27017 to replica set rejuvenation-ecommerce
+Fri Apr 26 10:07:53 successfully connected to new host mongo2:27017 in replica set rejuvenation-ecommerce
+Fri Apr 26 10:07:53 replica set monitor for replica set rejuvenation-ecommerce started, address is rejuvenation-ecommerce/mongo1:27017,mongo2:27017
+Fri Apr 26 10:07:53 [ReplicaSetMonitorWatcher] starting
+connected to: rejuvenation-ecommerce/arbiter1,mongo1,mongo2
+DATABASE: rejuvenation_production	 to 	/var/tmp/db-sync.4/rejuvenation_production
+	rejuvenation_production.models to /var/tmp/db-sync.4/rejuvenation_production/models.bson
+		 466 objects
+	rejuvenation_production.system.indexes to /var/tmp/db-sync.4/rejuvenation_production/system.indexes.bson
+		 260 objects
+	rejuvenation_production.categories to /var/tmp/db-sync.4/rejuvenation_production/categories.bson
+		 393 objects
+	rejuvenation_production.items to /var/tmp/db-sync.4/rejuvenation_production/items.bson
+		 27477 objects
+	rejuvenation_production.rejuvenation_view_templates to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_view_templates.bson
+		 2 objects
+	rejuvenation_production.products to /var/tmp/db-sync.4/rejuvenation_production/products.bson
+		7700/13775	55%
+		 13775 objects
+	rejuvenation_production.data_migrations to /var/tmp/db-sync.4/rejuvenation_production/data_migrations.bson
+		 79 objects
+	rejuvenation_production.rejuvenation_observers to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_observers.bson
+		 6731 objects
+	rejuvenation_production.promotions to /var/tmp/db-sync.4/rejuvenation_production/promotions.bson
+		 39 objects
+	rejuvenation_production.item_fields to /var/tmp/db-sync.4/rejuvenation_production/item_fields.bson
+		 904741 objects
+	rejuvenation_production.custom_attributes to /var/tmp/db-sync.4/rejuvenation_production/custom_attributes.bson
+		 352 objects
+	rejuvenation_production.rejuvenation_emails to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_emails.bson
+		 1 objects
+	rejuvenation_production.rejuvenation_middleware_observers to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_middleware_observers.bson
+		 19 objects
+	rejuvenation_production.payment_methods to /var/tmp/db-sync.4/rejuvenation_production/payment_methods.bson
+		 3 objects
+	rejuvenation_production.product_fields to /var/tmp/db-sync.4/rejuvenation_production/product_fields.bson
+		 440259 objects
+	rejuvenation_production.snips to /var/tmp/db-sync.4/rejuvenation_production/snips.bson
+		 257359 objects
+	rejuvenation_production.endeca_reports to /var/tmp/db-sync.4/rejuvenation_production/endeca_reports.bson
+		 3 objects
+	rejuvenation_production.my_products to /var/tmp/db-sync.4/rejuvenation_production/my_products.bson
+		 1 objects
+	rejuvenation_production.rejuvenation_configurations to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_configurations.bson
+		 1 objects
+	rejuvenation_production.rejuvenation_settings to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_settings.bson
+		 3 objects
+	rejuvenation_production.item_configurations to /var/tmp/db-sync.4/rejuvenation_production/item_configurations.bson
+		 223789 objects
+	rejuvenation_production.model_types to /var/tmp/db-sync.4/rejuvenation_production/model_types.bson
+		 21 objects
+	rejuvenation_production.template_fields to /var/tmp/db-sync.4/rejuvenation_production/template_fields.bson
+		 5569 objects
+	rejuvenation_production.users to /var/tmp/db-sync.4/rejuvenation_production/users.bson
+		 12670 objects
+	rejuvenation_production.rejuvenation_unmapped_attributes to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_unmapped_attributes.bson
+		 6 objects
+	rejuvenation_production.addresses to /var/tmp/db-sync.4/rejuvenation_production/addresses.bson
+		 21495 objects
+	rejuvenation_production.category_fields to /var/tmp/db-sync.4/rejuvenation_production/category_fields.bson
+		 18962 objects
+	rejuvenation_production.attribute_sets to /var/tmp/db-sync.4/rejuvenation_production/attribute_sets.bson
+		 76 objects
+	rejuvenation_production.subscriptions to /var/tmp/db-sync.4/rejuvenation_production/subscriptions.bson
+		 14607 objects
+	rejuvenation_production.orders to /var/tmp/db-sync.4/rejuvenation_production/orders.bson
+		200/322202	0%
+		272800/322202	84%
+		 322202 objects
+	rejuvenation_production.model_fields to /var/tmp/db-sync.4/rejuvenation_production/model_fields.bson
+		 5245 objects
+	rejuvenation_production.mutants_select_options to /var/tmp/db-sync.4/rejuvenation_production/mutants_select_options.bson
+		 1 objects
+	rejuvenation_production.rejuvenation_mappings to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_mappings.bson
+		 0 objects
+	rejuvenation_production.view_templates to /var/tmp/db-sync.4/rejuvenation_production/view_templates.bson
+		 130 objects
+	rejuvenation_production.level_ones to /var/tmp/db-sync.4/rejuvenation_production/level_ones.bson
+		 4 objects
+	rejuvenation_production.line_items to /var/tmp/db-sync.4/rejuvenation_production/line_items.bson
+		 183988 objects
+	rejuvenation_production.tax_percents to /var/tmp/db-sync.4/rejuvenation_production/tax_percents.bson
+		 842391 objects
+	rejuvenation_production.admin_users to /var/tmp/db-sync.4/rejuvenation_production/admin_users.bson
+		 19 objects
+	rejuvenation_production.product_images to /var/tmp/db-sync.4/rejuvenation_production/product_images.bson
+		 4473 objects
+	rejuvenation_production.payments to /var/tmp/db-sync.4/rejuvenation_production/payments.bson
+		 33624 objects
+	rejuvenation_production.product_references to /var/tmp/db-sync.4/rejuvenation_production/product_references.bson
+		 8782 objects
+	rejuvenation_production.product_options to /var/tmp/db-sync.4/rejuvenation_production/product_options.bson
+		 0 objects
+	rejuvenation_production.product_sections to /var/tmp/db-sync.4/rejuvenation_production/product_sections.bson
+		 7687 objects
+	rejuvenation_production.email_shares to /var/tmp/db-sync.4/rejuvenation_production/email_shares.bson
+		 5184 objects
+	rejuvenation_production.wishlist_shares to /var/tmp/db-sync.4/rejuvenation_production/wishlist_shares.bson
+		 372 objects
+	rejuvenation_production.catalog_requests to /var/tmp/db-sync.4/rejuvenation_production/catalog_requests.bson
+		 34080 objects
+	rejuvenation_production.observer_types to /var/tmp/db-sync.4/rejuvenation_production/observer_types.bson
+		 0 objects
+	rejuvenation_production.observers to /var/tmp/db-sync.4/rejuvenation_production/observers.bson
+		 0 objects
+	rejuvenation_production.observer_queue_transactions to /var/tmp/db-sync.4/rejuvenation_production/observer_queue_transactions.bson
+		 0 objects
+	rejuvenation_production.product_configurations to /var/tmp/db-sync.4/rejuvenation_production/product_configurations.bson
+		 0 objects
+	rejuvenation_production.rejuvenation_images to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_images.bson
+		 1951 objects
+	rejuvenation_production.report_files to /var/tmp/db-sync.4/rejuvenation_production/report_files.bson
+		 229 objects
+	rejuvenation_production.cache_sets to /var/tmp/db-sync.4/rejuvenation_production/cache_sets.bson
+		 46 objects
+	rejuvenation_production.cache_set_clearings to /var/tmp/db-sync.4/rejuvenation_production/cache_set_clearings.bson
+		 2765 objects
+	rejuvenation_production.middleware_observers to /var/tmp/db-sync.4/rejuvenation_production/middleware_observers.bson
+		 8 objects
+	rejuvenation_production.middleware_product_builders to /var/tmp/db-sync.4/rejuvenation_production/middleware_product_builders.bson
+		4900/88703	5%
+		10900/88703	12%
+		17000/88703	19%
+		19300/88703	21%
+		26100/88703	29%
+		29600/88703	33%
+		41100/88703	46%
+		52100/88703	58%
+		63400/88703	71%
+		80800/88703	91%
+		 88703 objects
+	rejuvenation_production.middleware_messages to /var/tmp/db-sync.4/rejuvenation_production/middleware_messages.bson
+		1600/202407	0%
+		3300/202407	1%
+		5200/202407	2%
+		8800/202407	4%
+		10500/202407	5%
+		11900/202407	5%
+		14000/202407	6%
+		17200/202407	8%
+		18500/202407	9%
+		21900/202407	10%
+		28900/202407	14%
+		33200/202407	16%
+		36100/202407	17%
+		38100/202407	18%
+		39600/202407	19%
+		40600/202407	20%
+		43300/202407	21%
+		50300/202407	24%
+		51300/202407	25%
+		55400/202407	27%
+		68200/202407	33%
+		70600/202407	34%
+		71800/202407	35%
+		80900/202407	39%
+		100800/202407	49%
+		108500/202407	53%
+		112500/202407	55%
+		112600/202407	55%
+		112700/202407	55%
+		112800/202407	55%
+		112900/202407	55%
+		113000/202407	55%
+		113100/202407	55%
+		113200/202407	55%
+		113500/202407	56%
+		118800/202407	58%
+		119200/202407	58%
+		119300/202407	58%
+		120300/202407	59%
+		130600/202407	64%
+		130700/202407	64%
+		131600/202407	65%
+		131900/202407	65%
+		132100/202407	65%
+		135700/202407	67%
+		137800/202407	68%
+		137900/202407	68%
+		138000/202407	68%
+		138100/202407	68%
+		139200/202407	68%
+		141200/202407	69%
+		148600/202407	73%
+		154500/202407	76%
+		154600/202407	76%
+		154800/202407	76%
+		154900/202407	76%
+		155000/202407	76%
+		155100/202407	76%
+		155200/202407	76%
+		155500/202407	76%
+		155600/202407	76%
+		155700/202407	76%
+		155800/202407	76%
+		158700/202407	78%
+		163700/202407	80%
+		169200/202407	83%
+		169300/202407	83%
+		177900/202407	87%
+		178000/202407	87%
+		179800/202407	88%
+		179900/202407	88%
+		180000/202407	88%
+		180100/202407	88%
+		185000/202407	91%
+		186900/202407	92%
+		197500/202407	97%
+		201900/202407	99%
+		202200/202407	99%
+		202300/202407	99%
+		202400/202407	99%
+		 202448 objects
+	rejuvenation_production.middleware_transactions to /var/tmp/db-sync.4/rejuvenation_production/middleware_transactions.bson
+		 266 objects
+	rejuvenation_production.categorizations to /var/tmp/db-sync.4/rejuvenation_production/categorizations.bson
+		 15839 objects
+	rejuvenation_production.promotion_triggers to /var/tmp/db-sync.4/rejuvenation_production/promotion_triggers.bson
+		 108 objects
+	rejuvenation_production.rejuvenation_reports to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_reports.bson
+		 8 objects
+	rejuvenation_production.audit_logs to /var/tmp/db-sync.4/rejuvenation_production/audit_logs.bson
+		 7 objects
+	rejuvenation_production.promotion_strategies to /var/tmp/db-sync.4/rejuvenation_production/promotion_strategies.bson
+		 85 objects
+	rejuvenation_production.promotion_rules to /var/tmp/db-sync.4/rejuvenation_production/promotion_rules.bson
+		 96 objects
+	rejuvenation_production.snails to /var/tmp/db-sync.4/rejuvenation_production/snails.bson
+		 0 objects
+	rejuvenation_production.product_alt_images to /var/tmp/db-sync.4/rejuvenation_production/product_alt_images.bson
+		 1149 objects
+	rejuvenation_production.product_instance_presenters to /var/tmp/db-sync.4/rejuvenation_production/product_instance_presenters.bson
+		 27029 objects
+	rejuvenation_production.rejuvenation_database_dumps to /var/tmp/db-sync.4/rejuvenation_production/rejuvenation_database_dumps.bson
+		 3 objects
+	rejuvenation_production.middleware_mappings to /var/tmp/db-sync.4/rejuvenation_production/middleware_mappings.bson
+		 15864 objects
+	rejuvenation_production.product_popular_combinations to /var/tmp/db-sync.4/rejuvenation_production/product_popular_combinations.bson
+		 217 objects
+-----> [mongo] Running 'mongorestore --drop -d rejuvenation_production_4 rejuvenation_production'
+connected to: 127.0.0.1
+Fri Apr 26 10:14:17 rejuvenation_production/categories.bson
+Fri Apr 26 10:14:17 	going into namespace [rejuvenation_production_4.categories]
+Fri Apr 26 10:14:17 	 dropping
+Fri Apr 26 10:14:17 rejuvenation_production/categories.metadata.json not found. Skipping.
+Fri Apr 26 10:14:17 rejuvenation_production/middleware_observers.bson
+Fri Apr 26 10:14:17 	going into namespace [rejuvenation_production_4.middleware_observers]
+Fri Apr 26 10:14:17 	 dropping
+393 objects found
+Fri Apr 26 10:14:17 rejuvenation_production/middleware_observers.metadata.json not found. Skipping.
+Fri Apr 26 10:14:17 rejuvenation_production/rejuvenation_images.bson
+Fri Apr 26 10:14:17 	going into namespace [rejuvenation_production_4.rejuvenation_images]
+Fri Apr 26 10:14:17 	 dropping
+8 objects found
+Fri Apr 26 10:14:18 rejuvenation_production/rejuvenation_images.metadata.json not found. Skipping.
+1951 objects found
+Fri Apr 26 10:14:18 rejuvenation_production/custom_attributes.bson
+Fri Apr 26 10:14:18 	going into namespace [rejuvenation_production_4.custom_attributes]
+Fri Apr 26 10:14:18 	 dropping
+Fri Apr 26 10:14:19 rejuvenation_production/custom_attributes.metadata.json not found. Skipping.
+Fri Apr 26 10:14:19 rejuvenation_production/middleware_product_builders.bson
+Fri Apr 26 10:14:19 	going into namespace [rejuvenation_production_4.middleware_product_builders]
+Fri Apr 26 10:14:19 	 dropping
+352 objects found
+Fri Apr 26 10:14:19 rejuvenation_production/middleware_product_builders.metadata.json not found. Skipping.
+Fri Apr 26 10:14:22 		108918887/701964433	15%	(bytes)
+Fri Apr 26 10:14:28 		147454050/701964433	21%	(bytes)
+Fri Apr 26 10:14:31 		290907387/701964433	41%	(bytes)
+Fri Apr 26 10:14:34 		472654860/701964433	67%	(bytes)
+Fri Apr 26 10:14:37 		675862319/701964433	96%	(bytes)
+88703 objects found
+Fri Apr 26 10:14:39 rejuvenation_production/line_items.bson
+Fri Apr 26 10:14:39 	going into namespace [rejuvenation_production_4.line_items]
+Fri Apr 26 10:14:39 	 dropping
+Fri Apr 26 10:14:39 rejuvenation_production/line_items.metadata.json not found. Skipping.
+Fri Apr 26 10:14:42 		32257545/125474534	25%	(bytes)
+Fri Apr 26 10:14:45 		82497732/125474534	65%	(bytes)
+Fri Apr 26 10:14:47 rejuvenation_production/rejuvenation_database_dumps.bson
+Fri Apr 26 10:14:47 	going into namespace [rejuvenation_production_4.rejuvenation_database_dumps]
+Fri Apr 26 10:14:47 	 dropping
+183988 objects found
+Fri Apr 26 10:14:47 rejuvenation_production/rejuvenation_database_dumps.metadata.json not found. Skipping.
+Fri Apr 26 10:14:47 rejuvenation_production/item_configurations.bson
+3 objects found
+Fri Apr 26 10:14:47 	going into namespace [rejuvenation_production_4.item_configurations]
+Fri Apr 26 10:14:47 	 dropping
+Fri Apr 26 10:14:47 rejuvenation_production/item_configurations.metadata.json not found. Skipping.
+Fri Apr 26 10:14:50 		21028974/74683218	28%	(bytes)
+Fri Apr 26 10:14:53 		48170542/74683218	64%	(bytes)
+Fri Apr 26 10:14:55 rejuvenation_production/audit_logs.bson
+Fri Apr 26 10:14:55 	going into namespace [rejuvenation_production_4.audit_logs]
+Fri Apr 26 10:14:55 	 dropping
+223789 objects found
+Fri Apr 26 10:14:56 rejuvenation_production/audit_logs.metadata.json not found. Skipping.
+Fri Apr 26 10:14:56 rejuvenation_production/promotion_triggers.bson
+Fri Apr 26 10:14:56 	going into namespace [rejuvenation_production_4.promotion_triggers]
+7 objects found
+Fri Apr 26 10:14:56 	 dropping
+Fri Apr 26 10:14:56 rejuvenation_production/promotion_triggers.metadata.json not found. Skipping.
+Fri Apr 26 10:14:56 rejuvenation_production/wishlist_shares.bson
+Fri Apr 26 10:14:56 	going into namespace [rejuvenation_production_4.wishlist_shares]
+Fri Apr 26 10:14:56 	 dropping
+108 objects found
+Fri Apr 26 10:14:56 rejuvenation_production/wishlist_shares.metadata.json not found. Skipping.
+Fri Apr 26 10:14:56 rejuvenation_production/tax_percents.bson
+Fri Apr 26 10:14:56 	going into namespace [rejuvenation_production_4.tax_percents]
+Fri Apr 26 10:14:56 	 dropping
+372 objects found
+Fri Apr 26 10:14:56 rejuvenation_production/tax_percents.metadata.json not found. Skipping.
+Fri Apr 26 10:14:59 		7220175/59787936	12%	(bytes)
+Fri Apr 26 10:15:02 		14973375/59787936	25%	(bytes)
+Fri Apr 26 10:15:05 		22705275/59787936	37%	(bytes)
+Fri Apr 26 10:15:08 		30756675/59787936	51%	(bytes)
+Fri Apr 26 10:15:11 		38488575/59787936	64%	(bytes)
+Fri Apr 26 10:15:14 		46248875/59787936	77%	(bytes)
+Fri Apr 26 10:15:17 		54250575/59787936	90%	(bytes)
+842391 objects found
+Fri Apr 26 10:15:19 rejuvenation_production/report_files.bson
+Fri Apr 26 10:15:19 	going into namespace [rejuvenation_production_4.report_files]
+Fri Apr 26 10:15:19 	 dropping
+Fri Apr 26 10:15:20 rejuvenation_production/report_files.metadata.json not found. Skipping.
+229 objects found
+Fri Apr 26 10:15:20 rejuvenation_production/product_instance_presenters.bson
+Fri Apr 26 10:15:20 	going into namespace [rejuvenation_production_4.product_instance_presenters]
+Fri Apr 26 10:15:20 	 dropping
+Fri Apr 26 10:15:20 rejuvenation_production/product_instance_presenters.metadata.json not found. Skipping.
+27029 objects found
+Fri Apr 26 10:15:21 rejuvenation_production/product_images.bson
+Fri Apr 26 10:15:21 	going into namespace [rejuvenation_production_4.product_images]
+Fri Apr 26 10:15:21 	 dropping
+Fri Apr 26 10:15:21 rejuvenation_production/product_images.metadata.json not found. Skipping.
+Fri Apr 26 10:15:21 rejuvenation_production/observer_types.bson
+4473 objects found
+Fri Apr 26 10:15:21 	going into namespace [rejuvenation_production_4.observer_types]
+Fri Apr 26 10:15:21 	 dropping
+Fri Apr 26 10:15:21 rejuvenation_production/observer_types.metadata.json not found. Skipping.
+Fri Apr 26 10:15:21 file rejuvenation_production/observer_types.bson empty, skipping
+Fri Apr 26 10:15:21 rejuvenation_production/view_templates.bson
+Fri Apr 26 10:15:21 	going into namespace [rejuvenation_production_4.view_templates]
+Fri Apr 26 10:15:21 	 dropping
+Fri Apr 26 10:15:21 rejuvenation_production/view_templates.metadata.json not found. Skipping.
+Fri Apr 26 10:15:21 rejuvenation_production/admin_users.bson
+Fri Apr 26 10:15:21 	going into namespace [rejuvenation_production_4.admin_users]
+Fri Apr 26 10:15:21 	 dropping
+130 objects found
+Fri Apr 26 10:15:21 rejuvenation_production/admin_users.metadata.json not found. Skipping.
+Fri Apr 26 10:15:21 rejuvenation_production/endeca_reports.bson
+Fri Apr 26 10:15:21 	going into namespace [rejuvenation_production_4.endeca_reports]
+Fri Apr 26 10:15:21 	 dropping
+19 objects found
+Fri Apr 26 10:15:22 rejuvenation_production/endeca_reports.metadata.json not found. Skipping.
+Fri Apr 26 10:15:22 rejuvenation_production/cache_set_clearings.bson
+Fri Apr 26 10:15:22 	going into namespace [rejuvenation_production_4.cache_set_clearings]
+Fri Apr 26 10:15:22 	 dropping
+3 objects found
+Fri Apr 26 10:15:22 rejuvenation_production/cache_set_clearings.metadata.json not found. Skipping.
+Fri Apr 26 10:15:22 rejuvenation_production/observers.bson
+2765 objects found
+Fri Apr 26 10:15:22 	going into namespace [rejuvenation_production_4.observers]
+Fri Apr 26 10:15:22 	 dropping
+Fri Apr 26 10:15:22 rejuvenation_production/observers.metadata.json not found. Skipping.
+Fri Apr 26 10:15:22 file rejuvenation_production/observers.bson empty, skipping
+Fri Apr 26 10:15:22 rejuvenation_production/snails.bson
+Fri Apr 26 10:15:22 	going into namespace [rejuvenation_production_4.snails]
+Fri Apr 26 10:15:22 	 dropping
+Fri Apr 26 10:15:22 rejuvenation_production/snails.metadata.json not found. Skipping.
+Fri Apr 26 10:15:22 file rejuvenation_production/snails.bson empty, skipping
+Fri Apr 26 10:15:22 rejuvenation_production/product_options.bson
+Fri Apr 26 10:15:22 	going into namespace [rejuvenation_production_4.product_options]
+Fri Apr 26 10:15:22 	 dropping
+Fri Apr 26 10:15:22 rejuvenation_production/product_options.metadata.json not found. Skipping.
+Fri Apr 26 10:15:22 file rejuvenation_production/product_options.bson empty, skipping
+Fri Apr 26 10:15:22 rejuvenation_production/product_sections.bson
+Fri Apr 26 10:15:22 	going into namespace [rejuvenation_production_4.product_sections]
+Fri Apr 26 10:15:22 	 dropping
+Fri Apr 26 10:15:22 rejuvenation_production/product_sections.metadata.json not found. Skipping.
+7687 objects found
+Fri Apr 26 10:15:22 rejuvenation_production/middleware_transactions.bson
+Fri Apr 26 10:15:22 	going into namespace [rejuvenation_production_4.middleware_transactions]
+Fri Apr 26 10:15:22 	 dropping
+Fri Apr 26 10:15:22 rejuvenation_production/middleware_transactions.metadata.json not found. Skipping.
+Fri Apr 26 10:15:22 rejuvenation_production/snips.bson
+Fri Apr 26 10:15:22 	going into namespace [rejuvenation_production_4.snips]
+Fri Apr 26 10:15:22 	 dropping
+266 objects found
+Fri Apr 26 10:15:23 rejuvenation_production/snips.metadata.json not found. Skipping.
+Fri Apr 26 10:15:26 		17345711/39822706	43%	(bytes)
+Fri Apr 26 10:15:29 		32349909/39822706	81%	(bytes)
+Fri Apr 26 10:15:30 rejuvenation_production/product_configurations.bson
+Fri Apr 26 10:15:30 	going into namespace [rejuvenation_production_4.product_configurations]
+Fri Apr 26 10:15:30 	 dropping
+257359 objects found
+Fri Apr 26 10:15:31 rejuvenation_production/product_configurations.metadata.json not found. Skipping.
+Fri Apr 26 10:15:31 file rejuvenation_production/product_configurations.bson empty, skipping
+Fri Apr 26 10:15:31 rejuvenation_production/mutants_select_options.bson
+Fri Apr 26 10:15:31 	going into namespace [rejuvenation_production_4.mutants_select_options]
+Fri Apr 26 10:15:31 	 dropping
+Fri Apr 26 10:15:31 rejuvenation_production/mutants_select_options.metadata.json not found. Skipping.
+1 objects found
+Fri Apr 26 10:15:31 rejuvenation_production/rejuvenation_configurations.bson
+Fri Apr 26 10:15:31 	going into namespace [rejuvenation_production_4.rejuvenation_configurations]
+Fri Apr 26 10:15:31 	 dropping
+Fri Apr 26 10:15:31 rejuvenation_production/rejuvenation_configurations.metadata.json not found. Skipping.
+1 objects found
+Fri Apr 26 10:15:31 rejuvenation_production/rejuvenation_middleware_observers.bson
+Fri Apr 26 10:15:31 	going into namespace [rejuvenation_production_4.rejuvenation_middleware_observers]
+Fri Apr 26 10:15:31 	 dropping
+Fri Apr 26 10:15:31 rejuvenation_production/rejuvenation_middleware_observers.metadata.json not found. Skipping.
+Fri Apr 26 10:15:31 rejuvenation_production/rejuvenation_observers.bson
+Fri Apr 26 10:15:31 	going into namespace [rejuvenation_production_4.rejuvenation_observers]
+Fri Apr 26 10:15:31 	 dropping
+19 objects found
+Fri Apr 26 10:15:31 rejuvenation_production/rejuvenation_observers.metadata.json not found. Skipping.
+Fri Apr 26 10:15:31 rejuvenation_production/product_alt_images.bson
+Fri Apr 26 10:15:31 	going into namespace [rejuvenation_production_4.product_alt_images]
+Fri Apr 26 10:15:31 	 dropping
+6731 objects found
+Fri Apr 26 10:15:31 rejuvenation_production/product_alt_images.metadata.json not found. Skipping.
+Fri Apr 26 10:15:31 rejuvenation_production/catalog_requests.bson
+Fri Apr 26 10:15:31 	going into namespace [rejuvenation_production_4.catalog_requests]
+Fri Apr 26 10:15:31 	 dropping
+1149 objects found
+Fri Apr 26 10:15:32 rejuvenation_production/catalog_requests.metadata.json not found. Skipping.
+34080 objects found
+Fri Apr 26 10:15:32 rejuvenation_production/middleware_mappings.bson
+Fri Apr 26 10:15:32 	going into namespace [rejuvenation_production_4.middleware_mappings]
+Fri Apr 26 10:15:32 	 dropping
+Fri Apr 26 10:15:33 rejuvenation_production/middleware_mappings.metadata.json not found. Skipping.
+Fri Apr 26 10:15:33 rejuvenation_production/payment_methods.bson
+Fri Apr 26 10:15:33 	going into namespace [rejuvenation_production_4.payment_methods]
+Fri Apr 26 10:15:33 	 dropping
+15864 objects found
+Fri Apr 26 10:15:34 rejuvenation_production/payment_methods.metadata.json not found. Skipping.
+Fri Apr 26 10:15:34 rejuvenation_production/category_fields.bson
+3 objects found
+Fri Apr 26 10:15:34 	going into namespace [rejuvenation_production_4.category_fields]
+Fri Apr 26 10:15:34 	 dropping
+Fri Apr 26 10:15:34 rejuvenation_production/category_fields.metadata.json not found. Skipping.
+Fri Apr 26 10:15:34 rejuvenation_production/rejuvenation_reports.bson
+Fri Apr 26 10:15:34 	going into namespace [rejuvenation_production_4.rejuvenation_reports]
+Fri Apr 26 10:15:34 	 dropping
+18962 objects found
+Fri Apr 26 10:15:35 rejuvenation_production/rejuvenation_reports.metadata.json not found. Skipping.
+8 objects found
+Fri Apr 26 10:15:35 rejuvenation_production/payments.bson
+Fri Apr 26 10:15:35 	going into namespace [rejuvenation_production_4.payments]
+Fri Apr 26 10:15:35 	 dropping
+Fri Apr 26 10:15:35 rejuvenation_production/payments.metadata.json not found. Skipping.
+33624 objects found
+Fri Apr 26 10:15:35 rejuvenation_production/users.bson
+Fri Apr 26 10:15:35 	going into namespace [rejuvenation_production_4.users]
+Fri Apr 26 10:15:35 	 dropping
+Fri Apr 26 10:15:36 rejuvenation_production/users.metadata.json not found. Skipping.
+Fri Apr 26 10:15:36 rejuvenation_production/attribute_sets.bson
+Fri Apr 26 10:15:36 	going into namespace [rejuvenation_production_4.attribute_sets]
+Fri Apr 26 10:15:36 	 dropping
+12670 objects found
+Fri Apr 26 10:15:37 rejuvenation_production/attribute_sets.metadata.json not found. Skipping.
+Fri Apr 26 10:15:37 rejuvenation_production/products.bson
+Fri Apr 26 10:15:37 	going into namespace [rejuvenation_production_4.products]
+Fri Apr 26 10:15:37 	 dropping
+76 objects found
+Fri Apr 26 10:15:37 rejuvenation_production/products.metadata.json not found. Skipping.
+Fri Apr 26 10:15:40 		107483362/232373537	46%	(bytes)
+Fri Apr 26 10:15:42 rejuvenation_production/orders.bson
+Fri Apr 26 10:15:42 	going into namespace [rejuvenation_production_4.orders]
+Fri Apr 26 10:15:42 	 dropping
+13775 objects found
+Fri Apr 26 10:15:42 rejuvenation_production/orders.metadata.json not found. Skipping.
+Fri Apr 26 10:15:45 		29832914/116336732	25%	(bytes)
+Fri Apr 26 10:15:48 		54471253/116336732	46%	(bytes)
+Fri Apr 26 10:15:51 		82114774/116336732	70%	(bytes)
+Fri Apr 26 10:15:53 rejuvenation_production/observer_queue_transactions.bson
+Fri Apr 26 10:15:53 	going into namespace [rejuvenation_production_4.observer_queue_transactions]
+Fri Apr 26 10:15:53 	 dropping
+322202 objects found
+Fri Apr 26 10:15:53 rejuvenation_production/observer_queue_transactions.metadata.json not found. Skipping.
+Fri Apr 26 10:15:53 file rejuvenation_production/observer_queue_transactions.bson empty, skipping
+Fri Apr 26 10:15:53 rejuvenation_production/rejuvenation_view_templates.bson
+Fri Apr 26 10:15:53 	going into namespace [rejuvenation_production_4.rejuvenation_view_templates]
+Fri Apr 26 10:15:53 	 dropping
+Fri Apr 26 10:15:53 rejuvenation_production/rejuvenation_view_templates.metadata.json not found. Skipping.
+Fri Apr 26 10:15:53 rejuvenation_production/middleware_messages.bson
+Fri Apr 26 10:15:53 	going into namespace [rejuvenation_production_4.middleware_messages]
+Fri Apr 26 10:15:53 	 dropping
+2 objects found
+Fri Apr 26 10:15:53 rejuvenation_production/middleware_messages.metadata.json not found. Skipping.
+Fri Apr 26 10:15:56 		60732496/14322810123	0%	(bytes)
+Fri Apr 26 10:16:01 		248425987/14322810123	1%	(bytes)
+Fri Apr 26 10:16:04 		371221566/14322810123	2%	(bytes)
+Fri Apr 26 10:16:09 		708445626/14322810123	4%	(bytes)
+Fri Apr 26 10:16:13 		916749571/14322810123	6%	(bytes)
+Fri Apr 26 10:16:16 		1111825535/14322810123	7%	(bytes)
+Fri Apr 26 10:16:23 		1343760947/14322810123	9%	(bytes)
+Fri Apr 26 10:16:26 		1504969455/14322810123	10%	(bytes)
+Fri Apr 26 10:16:29 		1642194599/14322810123	11%	(bytes)
+Fri Apr 26 10:16:32 		1829594075/14322810123	12%	(bytes)
+Fri Apr 26 10:16:36 		1992746332/14322810123	13%	(bytes)
+Fri Apr 26 10:16:42 		2259983341/14322810123	15%	(bytes)
+Fri Apr 26 10:16:45 		2532619084/14322810123	17%	(bytes)
+Fri Apr 26 10:16:48 		2810207000/14322810123	19%	(bytes)
+Fri Apr 26 10:16:52 		3093637813/14322810123	21%	(bytes)
+Fri Apr 26 10:16:55 		3330188909/14322810123	23%	(bytes)
+Fri Apr 26 10:17:04 		3619833211/14322810123	25%	(bytes)
+Fri Apr 26 10:17:07 		3901641176/14322810123	27%	(bytes)
+Fri Apr 26 10:17:10 		4059114013/14322810123	28%	(bytes)
+Fri Apr 26 10:17:15 		4237697484/14322810123	29%	(bytes)
+Fri Apr 26 10:17:18 		4474769290/14322810123	31%	(bytes)
+Fri Apr 26 10:17:21 		4680486500/14322810123	32%	(bytes)
+Fri Apr 26 10:17:25 		4969672459/14322810123	34%	(bytes)
+Fri Apr 26 10:17:29 		5211784774/14322810123	36%	(bytes)
+Fri Apr 26 10:17:37 		5391287044/14322810123	37%	(bytes)
+Fri Apr 26 10:17:41 		5656344910/14322810123	39%	(bytes)
+Fri Apr 26 10:17:44 		5883102292/14322810123	41%	(bytes)
+Fri Apr 26 10:17:47 		6107694256/14322810123	42%	(bytes)
+Fri Apr 26 10:17:50 		6333023981/14322810123	44%	(bytes)
+Fri Apr 26 10:17:59 		6580546805/14322810123	45%	(bytes)
+Fri Apr 26 10:18:03 		6818444748/14322810123	47%	(bytes)
+Fri Apr 26 10:18:06 		6973072891/14322810123	48%	(bytes)
+Fri Apr 26 10:18:14 		7393189327/14322810123	51%	(bytes)
+Fri Apr 26 10:18:18 		7668345031/14322810123	53%	(bytes)
+Fri Apr 26 10:18:23 		7880325700/14322810123	55%	(bytes)
+Fri Apr 26 10:18:26 		8166568324/14322810123	57%	(bytes)
+Fri Apr 26 10:18:30 		8459924128/14322810123	59%	(bytes)
+Fri Apr 26 10:18:33 		8761154488/14322810123	61%	(bytes)
+Fri Apr 26 10:18:41 		9027364183/14322810123	63%	(bytes)
+Fri Apr 26 10:18:44 		9148442553/14322810123	63%	(bytes)
+Fri Apr 26 10:18:48 		9463895153/14322810123	66%	(bytes)
+Fri Apr 26 10:18:54 		9786726261/14322810123	68%	(bytes)
+Fri Apr 26 10:19:00 		10115918237/14322810123	70%	(bytes)
+Fri Apr 26 10:19:03 		10381582681/14322810123	72%	(bytes)
+Fri Apr 26 10:19:10 		10634828464/14322810123	74%	(bytes)
+Fri Apr 26 10:19:14 		10921784332/14322810123	76%	(bytes)
+Fri Apr 26 10:19:17 		11185835516/14322810123	78%	(bytes)
+Fri Apr 26 10:19:21 		11488367457/14322810123	80%	(bytes)
+Fri Apr 26 10:19:27 		11879240553/14322810123	82%	(bytes)
+Fri Apr 26 10:19:32 		11979479163/14322810123	83%	(bytes)
+Fri Apr 26 10:19:41 		12493151679/14322810123	87%	(bytes)
+Fri Apr 26 10:19:45 		12820806955/14322810123	89%	(bytes)
+Fri Apr 26 10:19:49 		13046314722/14322810123	91%	(bytes)
+Fri Apr 26 10:19:52 		13163824871/14322810123	91%	(bytes)
+Fri Apr 26 10:19:59 		13362074460/14322810123	93%	(bytes)
+Fri Apr 26 10:20:03 		13635988903/14322810123	95%	(bytes)
+Fri Apr 26 10:20:07 		13904862519/14322810123	97%	(bytes)
+Fri Apr 26 10:20:11 		14185646762/14322810123	99%	(bytes)
+202448 objects found
+Fri Apr 26 10:20:13 rejuvenation_production/promotion_rules.bson
+Fri Apr 26 10:20:13 	going into namespace [rejuvenation_production_4.promotion_rules]
+Fri Apr 26 10:20:13 	 dropping
+Fri Apr 26 10:20:13 rejuvenation_production/promotion_rules.metadata.json not found. Skipping.
+Fri Apr 26 10:20:13 rejuvenation_production/data_migrations.bson
+Fri Apr 26 10:20:13 	going into namespace [rejuvenation_production_4.data_migrations]
+Fri Apr 26 10:20:13 	 dropping
+96 objects found
+Fri Apr 26 10:20:17 rejuvenation_production/data_migrations.metadata.json not found. Skipping.
+Fri Apr 26 10:20:17 rejuvenation_production/categorizations.bson
+Fri Apr 26 10:20:17 	going into namespace [rejuvenation_production_4.categorizations]
+Fri Apr 26 10:20:17 	 dropping
+79 objects found
+Fri Apr 26 10:20:17 rejuvenation_production/categorizations.metadata.json not found. Skipping.
+15839 objects found
+Fri Apr 26 10:20:17 rejuvenation_production/my_products.bson
+Fri Apr 26 10:20:17 	going into namespace [rejuvenation_production_4.my_products]
+Fri Apr 26 10:20:17 	 dropping
+Fri Apr 26 10:20:18 rejuvenation_production/my_products.metadata.json not found. Skipping.
+1 objects found
+Fri Apr 26 10:20:18 rejuvenation_production/product_fields.bson
+Fri Apr 26 10:20:18 	going into namespace [rejuvenation_production_4.product_fields]
+Fri Apr 26 10:20:18 	 dropping
+Fri Apr 26 10:20:18 rejuvenation_production/product_fields.metadata.json not found. Skipping.
+Fri Apr 26 10:20:21 		20984836/76278825	27%	(bytes)
+Fri Apr 26 10:20:24 		36749266/76278825	48%	(bytes)
+Fri Apr 26 10:20:27 		53388768/76278825	69%	(bytes)
+Fri Apr 26 10:20:30 		60415911/76278825	79%	(bytes)
+440259 objects found
+Fri Apr 26 10:20:32 rejuvenation_production/addresses.bson
+Fri Apr 26 10:20:32 	going into namespace [rejuvenation_production_4.addresses]
+Fri Apr 26 10:20:32 	 dropping
+Fri Apr 26 10:20:33 rejuvenation_production/addresses.metadata.json not found. Skipping.
+Fri Apr 26 10:20:34 rejuvenation_production/cache_sets.bson
+Fri Apr 26 10:20:34 	going into namespace [rejuvenation_production_4.cache_sets]
+Fri Apr 26 10:20:34 	 dropping
+21495 objects found
+Fri Apr 26 10:20:35 rejuvenation_production/cache_sets.metadata.json not found. Skipping.
+Fri Apr 26 10:20:35 rejuvenation_production/template_fields.bson
+Fri Apr 26 10:20:35 	going into namespace [rejuvenation_production_4.template_fields]
+Fri Apr 26 10:20:35 	 dropping
+46 objects found
+Fri Apr 26 10:20:35 rejuvenation_production/template_fields.metadata.json not found. Skipping.
+5569 objects found
+Fri Apr 26 10:20:35 rejuvenation_production/promotions.bson
+Fri Apr 26 10:20:35 	going into namespace [rejuvenation_production_4.promotions]
+Fri Apr 26 10:20:35 	 dropping
+Fri Apr 26 10:20:35 rejuvenation_production/promotions.metadata.json not found. Skipping.
+Fri Apr 26 10:20:35 rejuvenation_production/promotion_strategies.bson
+Fri Apr 26 10:20:35 	going into namespace [rejuvenation_production_4.promotion_strategies]
+Fri Apr 26 10:20:35 	 dropping
+39 objects found
+Fri Apr 26 10:20:35 rejuvenation_production/promotion_strategies.metadata.json not found. Skipping.
+Fri Apr 26 10:20:35 rejuvenation_production/subscriptions.bson
+Fri Apr 26 10:20:35 	going into namespace [rejuvenation_production_4.subscriptions]
+Fri Apr 26 10:20:35 	 dropping
+85 objects found
+Fri Apr 26 10:20:35 rejuvenation_production/subscriptions.metadata.json not found. Skipping.
+14607 objects found
+Fri Apr 26 10:20:35 rejuvenation_production/items.bson
+Fri Apr 26 10:20:35 	going into namespace [rejuvenation_production_4.items]
+Fri Apr 26 10:20:35 	 dropping
+Fri Apr 26 10:20:36 rejuvenation_production/items.metadata.json not found. Skipping.
+Fri Apr 26 10:20:39 		12754361/77698401	16%	(bytes)
+Fri Apr 26 10:20:41 rejuvenation_production/models.bson
+Fri Apr 26 10:20:41 	going into namespace [rejuvenation_production_4.models]
+Fri Apr 26 10:20:41 	 dropping
+27477 objects found
+Fri Apr 26 10:20:41 rejuvenation_production/models.metadata.json not found. Skipping.
+Fri Apr 26 10:20:41 rejuvenation_production/item_fields.bson
+Fri Apr 26 10:20:41 	going into namespace [rejuvenation_production_4.item_fields]
+Fri Apr 26 10:20:41 	 dropping
+466 objects found
+Fri Apr 26 10:20:41 rejuvenation_production/item_fields.metadata.json not found. Skipping.
+Fri Apr 26 10:20:44 		13505355/148810855	9%	(bytes)
+Fri Apr 26 10:20:47 		29979852/148810855	20%	(bytes)
+Fri Apr 26 10:20:50 		45819339/148810855	30%	(bytes)
+Fri Apr 26 10:20:53 		62412345/148810855	41%	(bytes)
+Fri Apr 26 10:20:56 		78172528/148810855	52%	(bytes)
+Fri Apr 26 10:20:59 		93796947/148810855	63%	(bytes)
+Fri Apr 26 10:21:02 		110406119/148810855	74%	(bytes)
+Fri Apr 26 10:21:05 		122909289/148810855	82%	(bytes)
+Fri Apr 26 10:21:08 		138989156/148810855	93%	(bytes)
+Fri Apr 26 10:21:09 rejuvenation_production/product_references.bson
+Fri Apr 26 10:21:09 	going into namespace [rejuvenation_production_4.product_references]
+Fri Apr 26 10:21:09 	 dropping
+904741 objects found
+Fri Apr 26 10:21:10 rejuvenation_production/product_references.metadata.json not found. Skipping.
+Fri Apr 26 10:21:10 rejuvenation_production/rejuvenation_emails.bson
+Fri Apr 26 10:21:10 	going into namespace [rejuvenation_production_4.rejuvenation_emails]
+Fri Apr 26 10:21:10 	 dropping
+8782 objects found
+Fri Apr 26 10:21:11 rejuvenation_production/rejuvenation_emails.metadata.json not found. Skipping.
+1 objects found
+Fri Apr 26 10:21:11 rejuvenation_production/level_ones.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.level_ones]
+Fri Apr 26 10:21:11 	 dropping
+Fri Apr 26 10:21:11 rejuvenation_production/level_ones.metadata.json not found. Skipping.
+Fri Apr 26 10:21:11 rejuvenation_production/product_popular_combinations.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.product_popular_combinations]
+Fri Apr 26 10:21:11 	 dropping
+4 objects found
+Fri Apr 26 10:21:11 rejuvenation_production/product_popular_combinations.metadata.json not found. Skipping.
+Fri Apr 26 10:21:11 rejuvenation_production/rejuvenation_settings.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.rejuvenation_settings]
+Fri Apr 26 10:21:11 	 dropping
+217 objects found
+Fri Apr 26 10:21:11 rejuvenation_production/rejuvenation_settings.metadata.json not found. Skipping.
+Fri Apr 26 10:21:11 rejuvenation_production/model_fields.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.model_fields]
+Fri Apr 26 10:21:11 	 dropping
+3 objects found
+Fri Apr 26 10:21:11 rejuvenation_production/model_fields.metadata.json not found. Skipping.
+5245 objects found
+Fri Apr 26 10:21:11 rejuvenation_production/rejuvenation_mappings.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.rejuvenation_mappings]
+Fri Apr 26 10:21:11 	 dropping
+Fri Apr 26 10:21:11 rejuvenation_production/rejuvenation_mappings.metadata.json not found. Skipping.
+Fri Apr 26 10:21:11 file rejuvenation_production/rejuvenation_mappings.bson empty, skipping
+Fri Apr 26 10:21:11 rejuvenation_production/email_shares.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.email_shares]
+Fri Apr 26 10:21:11 	 dropping
+Fri Apr 26 10:21:11 rejuvenation_production/email_shares.metadata.json not found. Skipping.
+5184 objects found
+Fri Apr 26 10:21:11 rejuvenation_production/model_types.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.model_types]
+Fri Apr 26 10:21:11 	 dropping
+Fri Apr 26 10:21:11 rejuvenation_production/model_types.metadata.json not found. Skipping.
+21 objects found
+Fri Apr 26 10:21:11 rejuvenation_production/rejuvenation_unmapped_attributes.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.rejuvenation_unmapped_attributes]
+Fri Apr 26 10:21:11 	 dropping
+Fri Apr 26 10:21:11 rejuvenation_production/rejuvenation_unmapped_attributes.metadata.json not found. Skipping.
+Fri Apr 26 10:21:11 rejuvenation_production/system.indexes.bson
+Fri Apr 26 10:21:11 	going into namespace [rejuvenation_production_4.system.indexes]
+Fri Apr 26 10:21:11 	 dropping
+6 objects found
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.models", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.categories", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.items", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_view_templates", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.products", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.data_migrations", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_observers", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.promotions", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.item_fields", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.custom_attributes", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_emails", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_middleware_observers", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.payment_methods", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_fields", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.snips", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.endeca_reports", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.my_products", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_configurations", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_settings", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.item_configurations", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.model_types", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.template_fields", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.users", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_unmapped_attributes", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.addresses", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.category_fields", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.attribute_sets", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.subscriptions", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.orders", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.model_fields", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.mutants_select_options", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_mappings", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.view_templates", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.level_ones", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.line_items", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.tax_percents", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.admin_users", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_images", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.payments", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_references", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_options", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_sections", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.email_shares", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.wishlist_shares", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.catalog_requests", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.observer_types", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.observers", name: "_id_" }
+Fri Apr 26 10:21:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.observer_queue_transactions", name: "_id_" }
+Fri Apr 26 10:21:12 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_configurations", name: "_id_" }
+Fri Apr 26 10:21:12 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_images", name: "_id_" }
+Fri Apr 26 10:21:12 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.report_files", name: "_id_" }
+Fri Apr 26 10:21:12 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.cache_sets", name: "_id_" }
+Fri Apr 26 10:21:12 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.cache_set_clearings", name: "_id_" }
+Fri Apr 26 10:21:12 	Creating index: { key: { title: 1 }, ns: "rejuvenation_production_4.products", name: "title_1" }
+Fri Apr 26 10:21:13 	Creating index: { key: { slug: 1 }, ns: "rejuvenation_production_4.products", name: "slug_1" }
+Fri Apr 26 10:21:13 	Creating index: { key: { fullpath: 1 }, ns: "rejuvenation_production_4.products", name: "fullpath_1" }
+Fri Apr 26 10:21:13 	Creating index: { key: { dax_item_id: 1 }, ns: "rejuvenation_production_4.products", name: "dax_item_id_1" }
+Fri Apr 26 10:21:13 	Creating index: { key: { listed: 1 }, ns: "rejuvenation_production_4.products", name: "listed_1" }
+Fri Apr 26 10:21:13 	Creating index: { key: { parent_id: 1 }, ns: "rejuvenation_production_4.attribute_sets", name: "parent_id_1" }
+Fri Apr 26 10:21:13 	Creating index: { key: { parent_id: 1 }, ns: "rejuvenation_production_4.categories", name: "parent_id_1" }
+Fri Apr 26 10:21:13 	Creating index: { key: { fullpath: 1 }, ns: "rejuvenation_production_4.categories", name: "fullpath_1" }
+Fri Apr 26 10:21:13 	Creating index: { key: { size_id: 1 }, ns: "rejuvenation_production_4.items", name: "size_id_1" }
+Fri Apr 26 10:21:14 	Creating index: { key: { color_id: 1 }, ns: "rejuvenation_production_4.items", name: "color_id_1" }
+Fri Apr 26 10:21:14 	Creating index: { key: { config_id: 1 }, ns: "rejuvenation_production_4.items", name: "config_id_1" }
+Fri Apr 26 10:21:14 	Creating index: { key: { item_name: 1 }, ns: "rejuvenation_production_4.items", name: "item_name_1" }
+Fri Apr 26 10:21:14 	Creating index: { key: { price: 1 }, ns: "rejuvenation_production_4.items", name: "price_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { product_id: 1 }, ns: "rejuvenation_production_4.items", name: "product_id_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { slug: 1 }, unique: true, ns: "rejuvenation_production_4.models", name: "slug_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { label: 1 }, ns: "rejuvenation_production_4.models", name: "label_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { description: 1 }, ns: "rejuvenation_production_4.models", name: "description_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { created_at: 1 }, ns: "rejuvenation_production_4.models", name: "created_at_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { updated_at: 1 }, ns: "rejuvenation_production_4.models", name: "updated_at_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { slug: 1 }, unique: true, ns: "rejuvenation_production_4.model_types", name: "slug_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { label: 1 }, unique: true, ns: "rejuvenation_production_4.model_types", name: "label_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { description: 1 }, ns: "rejuvenation_production_4.model_types", name: "description_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { created_at: 1 }, ns: "rejuvenation_production_4.model_types", name: "created_at_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { updated_at: 1 }, ns: "rejuvenation_production_4.model_types", name: "updated_at_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { _type: 1 }, ns: "rejuvenation_production_4.rejuvenation_observers", name: "_type_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { flag: 1 }, ns: "rejuvenation_production_4.rejuvenation_observers", name: "flag_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { created_at: 1 }, ns: "rejuvenation_production_4.rejuvenation_observers", name: "created_at_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { updated_at: 1 }, ns: "rejuvenation_production_4.rejuvenation_observers", name: "updated_at_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { listed: 1 }, ns: "rejuvenation_production_4.items", name: "listed_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { name: 1 }, ns: "rejuvenation_production_4.view_templates", name: "name_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { prefix: 1 }, ns: "rejuvenation_production_4.view_templates", name: "prefix_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { partial: 1 }, ns: "rejuvenation_production_4.view_templates", name: "partial_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { locale: 1 }, ns: "rejuvenation_production_4.view_templates", name: "locale_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { formats: 1 }, ns: "rejuvenation_production_4.view_templates", name: "formats_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { handlers: 1 }, ns: "rejuvenation_production_4.view_templates", name: "handlers_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { status: 1 }, ns: "rejuvenation_production_4.view_templates", name: "status_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { from_file: 1 }, ns: "rejuvenation_production_4.view_templates", name: "from_file_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { message: 1 }, ns: "rejuvenation_production_4.rejuvenation_observers", name: "message_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { listed: 1 }, ns: "rejuvenation_production_4.categories", name: "listed_1" }
+Fri Apr 26 10:21:15 	Creating index: { key: { number: 1 }, unique: true, ns: "rejuvenation_production_4.snips", name: "number_1" }
+Fri Apr 26 10:21:17 	Creating index: { key: { url: 1 }, unique: true, ns: "rejuvenation_production_4.snips", name: "url_1" }
+Fri Apr 26 10:21:18 	Creating index: { key: { slug: 1 }, ns: "rejuvenation_production_4.items", name: "slug_1" }
+Fri Apr 26 10:21:18 	Creating index: { key: { sku: 1 }, ns: "rejuvenation_production_4.items", name: "sku_1" }
+Fri Apr 26 10:21:19 	Creating index: { key: { inventory: 1 }, ns: "rejuvenation_production_4.items", name: "inventory_1" }
+Fri Apr 26 10:21:19 	Creating index: { key: { slug: 1 }, ns: "rejuvenation_production_4.item_configurations", name: "slug_1" }
+Fri Apr 26 10:21:20 	Creating index: { key: { label: 1 }, ns: "rejuvenation_production_4.item_configurations", name: "label_1" }
+Fri Apr 26 10:21:21 	Creating index: { key: { options: 1 }, ns: "rejuvenation_production_4.item_configurations", name: "options_1" }
+Fri Apr 26 10:21:24 		9665/29137	33%	(bytes)
+Fri Apr 26 10:21:24 	Creating index: { key: { slug: 1 }, ns: "rejuvenation_production_4.custom_attributes", name: "slug_1" }
+Fri Apr 26 10:21:24 	Creating index: { key: { slug: 1 }, ns: "rejuvenation_production_4.categories", name: "slug_1" }
+Fri Apr 26 10:21:24 	Creating index: { key: { slug: 1 }, ns: "rejuvenation_production_4.orders", name: "slug_1" }
+Fri Apr 26 10:21:26 	Creating index: { key: { product_id: 1 }, ns: "rejuvenation_production_4.product_fields", name: "product_id_1" }
+Fri Apr 26 10:21:28 	Creating index: { key: { custom_attribute_id: 1 }, ns: "rejuvenation_production_4.product_fields", name: "custom_attribute_id_1" }
+Fri Apr 26 10:21:29 	Creating index: { key: { product_id: 1, custom_attribute_id: 1 }, ns: "rejuvenation_production_4.product_fields", name: "product_id_1_custom_attribute_id_1" }
+Fri Apr 26 10:21:31 	Creating index: { key: { slug: 1 }, ns: "rejuvenation_production_4.attribute_sets", name: "slug_1" }
+Fri Apr 26 10:21:31 	Creating index: { key: { listed: 1 }, ns: "rejuvenation_production_4.models", name: "listed_1" }
+Fri Apr 26 10:21:31 	Creating index: { key: { user_id: 1 }, ns: "rejuvenation_production_4.orders", name: "user_id_1" }
+Fri Apr 26 10:21:33 	Creating index: { key: { attribute_set_id: 1 }, ns: "rejuvenation_production_4.rejuvenation_mappings", name: "attribute_set_id_1", background: true }
+Fri Apr 26 10:21:33 	Creating index: { key: { size_model_id: 1 }, ns: "rejuvenation_production_4.rejuvenation_mappings", name: "size_model_id_1", background: true }
+Fri Apr 26 10:21:33 	Creating index: { key: { color_model_id: 1 }, ns: "rejuvenation_production_4.rejuvenation_mappings", name: "color_model_id_1", background: true }
+Fri Apr 26 10:21:33 	Creating index: { key: { config_model_id: 1 }, ns: "rejuvenation_production_4.rejuvenation_mappings", name: "config_model_id_1", background: true }
+Fri Apr 26 10:21:33 	Creating index: { key: { product_id: 1 }, ns: "rejuvenation_production_4.rejuvenation_mappings", name: "product_id_1", background: true }
+Fri Apr 26 10:21:33 	Creating index: { key: { custom_attribute_id: 1 }, ns: "rejuvenation_production_4.rejuvenation_mappings", name: "custom_attribute_id_1", background: true }
+Fri Apr 26 10:21:33 	Creating index: { key: { code: 1 }, unique: true, ns: "rejuvenation_production_4.tax_percents", name: "code_1" }
+Fri Apr 26 10:21:36 	Creating index: { key: { percent: 1 }, ns: "rejuvenation_production_4.tax_percents", name: "percent_1" }
+Fri Apr 26 10:21:38 	Creating index: { key: { tax_for_ship: 1 }, ns: "rejuvenation_production_4.tax_percents", name: "tax_for_ship_1" }
+Fri Apr 26 10:21:40 	Creating index: { key: { custom_attribute_id: 1 }, ns: "rejuvenation_production_4.item_fields", name: "custom_attribute_id_1", background: true }
+Fri Apr 26 10:21:47 	Creating index: { key: { item_id: 1 }, ns: "rejuvenation_production_4.item_fields", name: "item_id_1", background: true }
+Fri Apr 26 10:21:53 	Creating index: { key: { item_id: 1, custom_attribute_id: 1 }, ns: "rejuvenation_production_4.item_fields", name: "item_id_1_custom_attribute_id_1" }
+Fri Apr 26 10:21:57 	Creating index: { key: { configurable: 1 }, ns: "rejuvenation_production_4.products", name: "configurable_1" }
+Fri Apr 26 10:21:57 	Creating index: { key: { custom_attribute_id: 1 }, ns: "rejuvenation_production_4.template_fields", name: "custom_attribute_id_1", background: true }
+Fri Apr 26 10:21:57 	Creating index: { key: { view_template_id: 1 }, ns: "rejuvenation_production_4.template_fields", name: "view_template_id_1", background: true }
+Fri Apr 26 10:21:57 	Creating index: { key: { view_template_id: 1, custom_attribute_id: 1 }, ns: "rejuvenation_production_4.template_fields", name: "view_template_id_1_custom_attribute_id_1" }
+Fri Apr 26 10:21:57 	Creating index: { key: { image_id: 1.0 }, ns: "rejuvenation_production_4.items", name: "image_id_1" }
+Fri Apr 26 10:21:57 	Creating index: { key: { sku_id: 1.0 }, ns: "rejuvenation_production_4.items", name: "sku_id_1" }
+Fri Apr 26 10:21:58 	Creating index: { key: { item_id: 1.0 }, ns: "rejuvenation_production_4.item_configurations", name: "item_id_1" }
+Fri Apr 26 10:21:59 	Creating index: { key: { product_id: 1.0 }, ns: "rejuvenation_production_4.item_configurations", name: "product_id_1" }
+Fri Apr 26 10:21:59 	Creating index: { key: { finalized_at: 1 }, ns: "rejuvenation_production_4.line_items", name: "finalized_at_1" }
+Fri Apr 26 10:22:01 	Creating index: { key: { finalized_at: 1.0 }, ns: "rejuvenation_production_4.orders", name: "finalized_at_1" }
+Fri Apr 26 10:22:02 	Creating index: { key: { promotion_id: 1.0 }, ns: "rejuvenation_production_4.orders", name: "promotion_id_1" }
+Fri Apr 26 10:22:03 	Creating index: { key: { order_number: 1.0 }, ns: "rejuvenation_production_4.orders", name: "order_number_1" }
+Fri Apr 26 10:22:04 	Creating index: { key: { number: 1.0 }, ns: "rejuvenation_production_4.orders", name: "number_1" }
+Fri Apr 26 10:22:05 	Creating index: { key: { final_sub_total: 1.0 }, ns: "rejuvenation_production_4.orders", name: "final_sub_total_1" }
+Fri Apr 26 10:22:07 	Creating index: { key: { final_promo_total: 1.0 }, ns: "rejuvenation_production_4.orders", name: "final_promo_total_1" }
+Fri Apr 26 10:22:08 	Creating index: { key: { final_shipping_promo_total: 1.0 }, ns: "rejuvenation_production_4.orders", name: "final_shipping_promo_total_1" }
+Fri Apr 26 10:22:09 	Creating index: { key: { final_tax_total: 1.0 }, ns: "rejuvenation_production_4.orders", name: "final_tax_total_1" }
+Fri Apr 26 10:22:10 	Creating index: { key: { final_shipping_total: 1.0 }, ns: "rejuvenation_production_4.orders", name: "final_shipping_total_1" }
+Fri Apr 26 10:22:12 	Creating index: { key: { final_raw_total: 1.0 }, ns: "rejuvenation_production_4.orders", name: "final_raw_total_1" }
+Fri Apr 26 10:22:13 	Creating index: { key: { final_total: 1.0 }, ns: "rejuvenation_production_4.orders", name: "final_total_1" }
+Fri Apr 26 10:22:14 	Creating index: { key: { finalized_at: 1 }, ns: "rejuvenation_production_4.payments", name: "finalized_at_1" }
+Fri Apr 26 10:22:14 	Creating index: { key: { custom_attribute_id: 1 }, ns: "rejuvenation_production_4.model_fields", name: "custom_attribute_id_1", background: true }
+Fri Apr 26 10:22:14 	Creating index: { key: { model_id: 1 }, ns: "rejuvenation_production_4.model_fields", name: "model_id_1", background: true }
+Fri Apr 26 10:22:15 	Creating index: { key: { model_id: 1, custom_attribute_id: 1 }, ns: "rejuvenation_production_4.model_fields", name: "model_id_1_custom_attribute_id_1" }
+Fri Apr 26 10:22:15 	Creating index: { key: { attribute_set_id: 1 }, ns: "rejuvenation_production_4.view_templates", name: "attribute_set_id_1", background: true }
+Fri Apr 26 10:22:15 	Creating index: { key: { from_template_id: 1 }, ns: "rejuvenation_production_4.view_templates", name: "from_template_id_1", background: true }
+Fri Apr 26 10:22:15 	Creating index: { key: { layout_id: 1 }, ns: "rejuvenation_production_4.view_templates", name: "layout_id_1", background: true }
+Fri Apr 26 10:22:15 	Creating index: { key: { custom_attribute_id: 1 }, ns: "rejuvenation_production_4.category_fields", name: "custom_attribute_id_1", background: true }
+Fri Apr 26 10:22:15 	Creating index: { key: { category_id: 1 }, ns: "rejuvenation_production_4.category_fields", name: "category_id_1", background: true }
+Fri Apr 26 10:22:15 	Creating index: { key: { category_id: 1, custom_attribute_id: 1 }, ns: "rejuvenation_production_4.category_fields", name: "category_id_1_custom_attribute_id_1" }
+Fri Apr 26 10:22:15 	Creating index: { key: { imageable_id: 1 }, ns: "rejuvenation_production_4.product_images", name: "imageable_id_1", background: true }
+Fri Apr 26 10:22:15 	Creating index: { key: { from_id: 1 }, ns: "rejuvenation_production_4.product_references", name: "from_id_1", background: true }
+Fri Apr 26 10:22:15 	Creating index: { key: { to_id: 1 }, ns: "rejuvenation_production_4.product_references", name: "to_id_1", background: true }
+Fri Apr 26 10:22:16 	Creating index: { key: { product_id: 1 }, ns: "rejuvenation_production_4.product_sections", name: "product_id_1", background: true }
+Fri Apr 26 10:22:16 	Creating index: { key: { _type: 1.0 }, ns: "rejuvenation_production_4.orders", name: "_type_1" }
+Fri Apr 26 10:22:17 	Creating index: { key: { order_id: 1 }, ns: "rejuvenation_production_4.line_items", name: "order_id_1", background: true }
+Fri Apr 26 10:22:18 	Creating index: { key: { item_id: 1 }, ns: "rejuvenation_production_4.line_items", name: "item_id_1", background: true }
+Fri Apr 26 10:22:20 	Creating index: { key: { configuration_id: 1 }, ns: "rejuvenation_production_4.line_items", name: "configuration_id_1", background: true }
+Fri Apr 26 10:22:21 	Creating index: { key: { line_item_count: 1 }, ns: "rejuvenation_production_4.orders", name: "line_item_count_1" }
+Fri Apr 26 10:22:23 	Creating index: { key: { created_at: 1 }, ns: "rejuvenation_production_4.orders", name: "created_at_1" }
+Fri Apr 26 10:22:24 	Creating index: { key: { updated_at: 1 }, ns: "rejuvenation_production_4.orders", name: "updated_at_1" }
+Fri Apr 26 10:22:25 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.middleware_observers", name: "_id_" }
+Fri Apr 26 10:22:25 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.middleware_product_builders", name: "_id_" }
+Fri Apr 26 10:22:25 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.middleware_messages", name: "_id_" }
+Fri Apr 26 10:22:25 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.middleware_transactions", name: "_id_" }
+Fri Apr 26 10:22:25 	Creating index: { key: { observer_id: 1 }, ns: "rejuvenation_production_4.middleware_transactions", background: true, name: "observer_id_1" }
+Fri Apr 26 10:22:25 	Creating index: { key: { _type: 1 }, ns: "rejuvenation_production_4.middleware_messages", name: "_type_1" }
+Fri Apr 26 10:22:52 	Creating index: { key: { processed_at: 1 }, ns: "rejuvenation_production_4.middleware_messages", name: "processed_at_1" }
+Fri Apr 26 10:22:57 	Creating index: { key: { updated_at: 1 }, ns: "rejuvenation_production_4.middleware_messages", name: "updated_at_1" }
+Fri Apr 26 10:22:58 	Creating index: { key: { basepart: 1 }, ns: "rejuvenation_production_4.middleware_product_builders", name: "basepart_1" }
+Fri Apr 26 10:23:02 	Creating index: { key: { query_string: 1 }, unique: true, ns: "rejuvenation_production_4.middleware_product_builders", name: "query_string_1" }
+Fri Apr 26 10:23:03 	Creating index: { key: { _type: 1 }, ns: "rejuvenation_production_4.middleware_observers", name: "_type_1" }
+Fri Apr 26 10:23:03 	Creating index: { key: { url: 1 }, ns: "rejuvenation_production_4.middleware_observers", name: "url_1" }
+Fri Apr 26 10:23:03 	Creating index: { key: { created_at: 1 }, ns: "rejuvenation_production_4.middleware_observers", name: "created_at_1" }
+Fri Apr 26 10:23:03 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.categorizations", name: "_id_" }
+Fri Apr 26 10:23:03 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.promotion_triggers", name: "_id_" }
+Fri Apr 26 10:23:03 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.promotion_strategies", name: "_id_" }
+Fri Apr 26 10:23:03 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.promotion_rules", name: "_id_" }
+Fri Apr 26 10:23:03 	Creating index: { key: { category_id: 1 }, ns: "rejuvenation_production_4.categorizations", name: "category_id_1", background: true }
+Fri Apr 26 10:23:03 	Creating index: { key: { categorizable_id: 1 }, ns: "rejuvenation_production_4.categorizations", name: "categorizable_id_1", background: true }
+Fri Apr 26 10:23:03 	Creating index: { key: { position: 1 }, ns: "rejuvenation_production_4.categorizations", name: "position_1" }
+Fri Apr 26 10:23:03 	Creating index: { key: { imageable_id: 1 }, ns: "rejuvenation_production_4.rejuvenation_images", name: "imageable_id_1", background: true }
+Fri Apr 26 10:23:03 	Creating index: { key: { image_id: 1 }, ns: "rejuvenation_production_4.item_configurations", name: "image_id_1", background: true }
+Fri Apr 26 10:23:05 	Creating index: { key: { promotion_id: 1 }, ns: "rejuvenation_production_4.promotion_strategies", name: "promotion_id_1", background: true }
+Fri Apr 26 10:23:05 	Creating index: { key: { promotion_id: 1 }, ns: "rejuvenation_production_4.promotion_triggers", name: "promotion_id_1", background: true }
+Fri Apr 26 10:23:05 	Creating index: { key: { category_id: 1 }, ns: "rejuvenation_production_4.promotion_triggers", name: "category_id_1", background: true }
+Fri Apr 26 10:23:05 	Creating index: { key: { enabled: 1 }, ns: "rejuvenation_production_4.promotions", name: "enabled_1" }
+Fri Apr 26 10:23:05 	Creating index: { key: { automatic: 1 }, ns: "rejuvenation_production_4.promotions", name: "automatic_1" }
+Fri Apr 26 10:23:05 	Creating index: { key: { after: 1 }, ns: "rejuvenation_production_4.promotion_rules", name: "after_1" }
+Fri Apr 26 10:23:05 	Creating index: { key: { promotion_id: 1 }, ns: "rejuvenation_production_4.promotion_rules", name: "promotion_id_1", background: true }
+Fri Apr 26 10:23:05 	Creating index: { key: { strategy_id: 1 }, ns: "rejuvenation_production_4.promotion_rules", name: "strategy_id_1", background: true }
+Fri Apr 26 10:23:05 	Creating index: { key: { trigger_ids: 1 }, ns: "rejuvenation_production_4.promotion_rules", name: "trigger_ids_1", background: true }
+Fri Apr 26 10:23:05 	Creating index: { key: { product_id: 1 }, ns: "rejuvenation_production_4.product_images", name: "product_id_1", background: true }
+Fri Apr 26 10:23:05 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.snails", name: "_id_" }
+Fri Apr 26 10:23:05 	Creating index: { key: { email: 1 }, ns: "rejuvenation_production_4.users", name: "email_1" }
+Fri Apr 26 10:23:06 	Creating index: { key: { first_name: 1 }, ns: "rejuvenation_production_4.users", name: "first_name_1" }
+Fri Apr 26 10:23:06 	Creating index: { key: { last_name: 1 }, ns: "rejuvenation_production_4.users", name: "last_name_1" }
+Fri Apr 26 10:23:06 	Creating index: { key: { depth: 1 }, ns: "rejuvenation_production_4.attribute_sets", name: "depth_1" }
+Fri Apr 26 10:23:06 	Creating index: { key: { state: 1 }, ns: "rejuvenation_production_4.middleware_messages", name: "state_1" }
+Fri Apr 26 10:23:07 		21211/29137	72%	(bytes)
+Fri Apr 26 10:23:07 	Creating index: { key: { final_line_item_promo_total: 1 }, ns: "rejuvenation_production_4.orders", name: "final_line_item_promo_total_1", backgorund: true }
+Fri Apr 26 10:23:08 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_alt_images", name: "_id_" }
+Fri Apr 26 10:23:08 	Creating index: { key: { listed: 1 }, ns: "rejuvenation_production_4.product_alt_images", name: "listed_1", background: true }
+Fri Apr 26 10:23:08 	Creating index: { key: { position: 1 }, ns: "rejuvenation_production_4.product_alt_images", name: "position_1", background: true }
+Fri Apr 26 10:23:08 	Creating index: { key: { product_id: 1 }, ns: "rejuvenation_production_4.product_alt_images", name: "product_id_1", background: true }
+Fri Apr 26 10:23:08 	Creating index: { key: { rejuvenation_image_ids: 1 }, ns: "rejuvenation_production_4.product_alt_images", name: "rejuvenation_image_ids_1", background: true }
+Fri Apr 26 10:23:08 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_reports", name: "_id_" }
+Fri Apr 26 10:23:08 	Creating index: { key: { categorizable_id: 1, _type: 1 }, ns: "rejuvenation_production_4.categorizations", background: true, name: "categorizable_id_1__type_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { imageable_id: 1, _type: 1 }, ns: "rejuvenation_production_4.rejuvenation_images", background: true, name: "imageable_id_1__type_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { parent_ids: 1 }, ns: "rejuvenation_production_4.categories", background: true, name: "parent_ids_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { depth: 1, position: 1 }, ns: "rejuvenation_production_4.categories", background: true, name: "depth_1_position_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { path: 1 }, ns: "rejuvenation_production_4.categories", background: true, name: "path_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { label: 1 }, unique: true, ns: "rejuvenation_production_4.cache_sets", name: "label_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { advanced: 1 }, ns: "rejuvenation_production_4.cache_sets", name: "advanced_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { redis_database: 1 }, ns: "rejuvenation_production_4.cache_sets", name: "redis_database_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { parent_ids: 1 }, ns: "rejuvenation_production_4.attribute_sets", background: true, name: "parent_ids_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { depth: 1, position: 1 }, ns: "rejuvenation_production_4.attribute_sets", background: true, name: "depth_1_position_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { path: 1 }, ns: "rejuvenation_production_4.attribute_sets", background: true, name: "path_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { name: 1, raw_label: 1, field_property: 1, type: 1 }, ns: "rejuvenation_production_4.product_sections", background: true, name: "name_1_raw_label_1_field_property_1_type_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { product_instance_presenter_id: 1 }, ns: "rejuvenation_production_4.categorizations", background: true, name: "product_instance_presenter_id_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_instance_presenters", name: "_id_" }
+Fri Apr 26 10:23:09 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.rejuvenation_database_dumps", name: "_id_" }
+Fri Apr 26 10:23:09 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.middleware_mappings", name: "_id_" }
+Fri Apr 26 10:23:09 	Creating index: { key: { _type: 1, key: 1 }, unique: true, ns: "rejuvenation_production_4.middleware_mappings", background: true, sparse: true, name: "_type_1_key_1" }
+Fri Apr 26 10:23:09 	Creating index: { key: { tokens: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "tokens_1" }
+Fri Apr 26 10:23:10 	Creating index: { key: { size_model_id: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "size_model_id_1" }
+Fri Apr 26 10:23:10 	Creating index: { key: { color_model_id: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "color_model_id_1" }
+Fri Apr 26 10:23:10 	Creating index: { key: { config_model_id: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "config_model_id_1" }
+Fri Apr 26 10:23:10 	Creating index: { key: { _type: 1, key.attribute_set_id: 1, key.field_property: 1, key.name: 1, key.raw_label: 1, key.type: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "middleware_mapping_section_index" }
+Fri Apr 26 10:23:10 	Creating index: { key: { _type: 1, key.product_id: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "_type_1_key.product_id_1" }
+Fri Apr 26 10:23:10 	Creating index: { key: { _type: 1, key.product_id: 1, key.field: 1, key.value: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "_type_1_key.product_id_1_key.field_1_key.value_1" }
+Fri Apr 26 10:23:11 	Creating index: { key: { key.attribute_set_id: 1, key.type: 1, key.value: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "key.attribute_set_id_1_key.type_1_key.value_1" }
+Fri Apr 26 10:23:11 	Creating index: { key: { key.attribute_set_id: 1, key.value: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "key.attribute_set_id_1_key.value_1" }
+Fri Apr 26 10:23:11 	Creating index: { key: { custom_attribute_id: 1 }, ns: "rejuvenation_production_4.middleware_mappings", background: true, name: "custom_attribute_id_1" }
+Fri Apr 26 10:23:11 	Creating index: { key: { product_id: 1, listed: 1 }, ns: "rejuvenation_production_4.items", background: true, name: "product_id_1_listed_1" }
+Fri Apr 26 10:23:11 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.product_popular_combinations", name: "_id_" }
+Fri Apr 26 10:23:11 	Creating index: { key: { product_id: 1 }, ns: "rejuvenation_production_4.product_popular_combinations", background: true, name: "product_id_1" }
+Fri Apr 26 10:23:11 	Creating index: { key: { size_id: 1, color_id: 1, product.dax_item_id: 1 }, ns: "rejuvenation_production_4.items", background: true, sparse: true, name: "size_id_1_color_id_1_product.dax_item_id_1" }
+Fri Apr 26 10:23:12 	Creating index: { key: { size_id: 1, color_id: 1, product_id: 1 }, ns: "rejuvenation_production_4.items", background: true, sparse: true, name: "size_id_1_color_id_1_product_id_1" }
+Fri Apr 26 10:23:12 	Creating index: { key: { default_configuration_id: 1 }, ns: "rejuvenation_production_4.products", background: true, name: "default_configuration_id_1" }
+Fri Apr 26 10:23:12 	Creating index: { key: { default_item_id: 1 }, ns: "rejuvenation_production_4.products", background: true, name: "default_item_id_1" }
+Fri Apr 26 10:23:12 	Creating index: { key: { model_type_id: 1, slug: 1 }, ns: "rejuvenation_production_4.models", background: true, name: "model_type_id_1_slug_1" }
+Fri Apr 26 10:23:12 	Creating index: { key: { product_id: 1, popularizable_id: 1, popularizable_type: 1 }, unique: true, ns: "rejuvenation_production_4.product_popular_combinations", name: "product_id_1_popularizable_id_1_popularizable_type_1" }
+Fri Apr 26 10:23:12 	Creating index: { key: { first_name: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "first_name_1" }
+Fri Apr 26 10:23:12 	Creating index: { key: { last_name: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "last_name_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { street_1: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "street_1_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { city: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "city_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { state: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "state_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { code: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "code_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { country: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "country_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { kind: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "kind_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { user_id: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "user_id_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { addressable_id: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "addressable_id_1" }
+Fri Apr 26 10:23:13 	Creating index: { key: { addressable_type: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "addressable_type_1" }
+Fri Apr 26 10:23:14 	Creating index: { key: { _type: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "_type_1" }
+Fri Apr 26 10:23:14 	Creating index: { key: { addressable_field: 1.0 }, ns: "rejuvenation_production_4.addresses", name: "addressable_field_1" }
+Fri Apr 26 10:23:14 	Creating index: { key: { zip: 1 }, ns: "rejuvenation_production_4.addresses", background: true, name: "zip_1" }
+Fri Apr 26 10:23:14 	Creating index: { key: { category_id: 1, categorizable_id: 1, categorizable_type: 1 }, unique: true, ns: "rejuvenation_production_4.categorizations", background: true, name: "category_id_1_categorizable_id_1_categorizable_type_1" }
+Fri Apr 26 10:23:14 	Creating index: { key: { _id: 1 }, ns: "rejuvenation_production_4.audit_logs", name: "_id_" }
+Fri Apr 26 10:23:14 	Creating index: { key: { association_chain.name: 1, association_chain.id: 1 }, ns: "rejuvenation_production_4.audit_logs", name: "association_chain.name_1_association_chain.id_1" }
+260 objects found
+-----> [lock] rm -f /tmp/db-sync.4.lock
+andg:~ andg$ ssh git@deploy1 deploy -E staging -i 4 web
+deploy1: web => staging1 (4)
+-----> [lock] touch /tmp/4.rejuvenation.web.lock
+-----> [git] Receiving push cc5d1f3e4f97586c0f64fa9f87f13e48991c1c90 by Andrew Gauger <agauger@rejuvenation.com>
+-----> [git] Rack app detected
+-----> [git] Rails app detected
+-----> [git] Gemfile detected, using Bundler version 1.2.3
+-----> [apt] Checking package dependencies...
+-----> [staging] Clone to /var/www/4/rejuvenation/staging
+-----> [staging] Git checkout cc5d1f3e4f97586c0f64fa9f87f13e48991c1c90
+Checking out files: 100% (2751/2751), done.
+HEAD is now at cc5d1f3 Merge pull request #741 from rejuvenationinc/un-batman_promotions
+-----> [staging] Syncing /.gitkeep
+-----> [staging] Parsing /.gitkeep
+-----> [staging] Syncing /etc/logrotate.d/4-rejuvenation-web
+-----> [staging] Parsing /etc/logrotate.d/4-rejuvenation-web
+-----> [staging] Syncing /etc/nginx/nginx.conf
+-----> [staging] Parsing /etc/nginx/nginx.conf
+-----> [staging] Syncing /etc/nginx/certs/4-wildcard.rejuvenation.com.key
+-----> [staging] Parsing /etc/nginx/certs/4-wildcard.rejuvenation.com.key
+-----> [staging] Syncing /etc/nginx/instances/4-instance.conf
+-----> [staging] Parsing /etc/nginx/instances/4-instance.conf
+-----> [staging] Syncing /etc/init/4-rejuvenation-workers.conf
+-----> [staging] Parsing /etc/init/4-rejuvenation-workers.conf
+-----> [staging] Syncing /etc/init/4-rejuvenation-web.conf
+-----> [staging] Parsing /etc/init/4-rejuvenation-web.conf
+-----> [staging] Syncing /etc/init/4-rejuvenation-workers-reload.conf
+-----> [staging] Parsing /etc/init/4-rejuvenation-workers-reload.conf
+-----> [staging] Syncing /etc/init/4-rejuvenation-web-reload.conf
+-----> [staging] Parsing /etc/init/4-rejuvenation-web-reload.conf
+-----> [staging] Syncing config/qu_redis.yml
+-----> [staging] Parsing config/qu_redis.yml
+-----> [staging] Syncing config/environments/production.rb
+-----> [staging] Parsing config/environments/production.rb
+-----> [staging] Syncing config/redis_store.yml
+-----> [staging] Parsing config/redis_store.yml
+-----> [staging] Syncing config/stalker.yml
+-----> [staging] Parsing config/stalker.yml
+-----> [staging] Syncing config/unicorn.rb
+-----> [staging] Parsing config/unicorn.rb
+-----> [staging] Syncing config/resque.yml
+-----> [staging] Parsing config/resque.yml
+-----> [staging] Syncing config/mongoid.yml
+-----> [staging] Parsing config/mongoid.yml
+-----> [staging] Syncing config/middleware.yml
+-----> [staging] Parsing config/middleware.yml
+-----> [staging] Syncing config/rejuvenation-workers.pill
+-----> [staging] Parsing config/rejuvenation-workers.pill
+-----> [staging] Syncing config/rejuvenation-web.pill
+-----> [staging] Parsing config/rejuvenation-web.pill
+-----> [staging] Syncing config/initializers/asset_sync.rb
+-----> [staging] Parsing config/initializers/asset_sync.rb
+-----> [staging] Syncing config/initializers/carrierwave.rb
+-----> [staging] Parsing config/initializers/carrierwave.rb
+-----> [staging] Syncing config/initializers/airbrake.rb
+-----> [staging] Parsing config/initializers/airbrake.rb
+-----> [staging] Syncing config/initializers/zz_rejuvenation.rb
+-----> [staging] Parsing config/initializers/zz_rejuvenation.rb
+-----> [staging] Syncing config/force_ssl.yml
+-----> [staging] Parsing config/force_ssl.yml
+-----> [staging] Syncing config/navy.rb
+-----> [staging] Parsing config/navy.rb
+-----> [staging] Syncing config/redis_session.yml
+-----> [staging] Parsing config/redis_session.yml
+-----> [staging] Syncing config/sidekiq.yml
+-----> [staging] Parsing config/sidekiq.yml
+-----> [staging] Syncing config/bazaarvoice.yml
+-----> [staging] Parsing config/bazaarvoice.yml
+-----> [staging] Running 'bundle install --deployment --without development test' in '/var/www/4/rejuvenation/staging'
+Using rake (10.0.4)
+Using i18n (0.6.4)
+Using multi_json (1.7.2)
+Using activesupport (3.2.12)
+Using builder (3.0.4)
+Using activemodel (3.2.12)
+Using erubis (2.7.0)
+Using journey (1.0.4)
+Using rack (1.4.5)
+Using rack-cache (1.2)
+Using rack-test (0.6.2)
+Using hike (1.2.1)
+Using tilt (1.3.3)
+Using sprockets (2.2.2)
+Using actionpack (3.2.12)
+Using mime-types (1.21)
+Using polyglot (0.3.3)
+Using treetop (1.4.12)
+Using mail (2.4.4)
+Using actionmailer (3.2.12)
+Using active_utils (1.0.5)
+Using json (1.7.7)
+Using money (5.1.1)
+Using nokogiri (1.5.6)
+Using activemerchant (1.31.1)
+Using arel (3.0.2)
+Using tzinfo (0.3.36)
+Using activerecord (3.2.12)
+Using activeresource (3.2.12)
+Using airbrake (3.1.8)
+Using ansi (1.4.3)
+Using excon (0.19.5)
+Using formatador (0.2.4)
+Using net-ssh (2.6.6)
+Using net-scp (1.1.0)
+Using ruby-hmac (0.4.0)
+Using fog (1.10.0)
+Using asset_sync (0.5.0)
+Using rack-ssl (1.3.3)
+Using rdoc (3.12.2)
+Using thor (0.18.1)
+Using railties (3.2.12)
+Using batman-rails (0.0.9)
+Using bcrypt-ruby (3.0.1)
+Using bluecloth (2.2.0)
+Using sass (3.2.6)
+Using sass-rails (3.2.6)
+Using bootstrap-sass-rails (2.3.1.1)
+Using bson (1.8.3)
+Using bson_ext (1.8.3)
+Using carmen (0.2.13)
+Using carrierwave (0.8.0)
+Using moped (1.4.5)
+Using origin (1.0.11)
+Using mongoid (3.0.23)
+Using mongoid-grid_fs (1.3.3)
+Using carrierwave-mongoid (0.3.0.alpha) from https://github.com/jnicklas/carrierwave-mongoid (at mongoid-3.0)
+Using facter (1.6.17)
+Using timers (1.1.0)
+Using celluloid (0.12.4)
+Using chunky_png (1.2.7)
+Using cocoon (1.0.22)
+Using coderay (1.0.9)
+Using coffee-script-source (1.4.0)
+Using execjs (1.4.0)
+Using coffee-script (2.2.0)
+Using haml (3.1.8)
+Using coffee-filter (0.1.3)
+Using coffee-rails (3.2.2)
+Using fssm (0.2.10)
+Using compass (0.12.2)
+Using compass-normalize (1.4.2)
+Using compass-rails (1.0.3)
+Using compass-recipes (0.3.0)
+Using connection_pool (1.0.0)
+Using hashie (1.2.0)
+Using multi_xml (0.5.3)
+Using httparty (0.10.2)
+Using createsend (2.5.1)
+Using curb (0.8.3)
+Using orm_adapter (0.4.0)
+Using warden (1.2.1)
+Using devise (2.2.3)
+Using devise-async (0.6.0)
+Using diff-lcs (1.1.3)
+Using diffy (2.1.0)
+Using draper (0.18.0)
+Using easy_diff (0.0.2)
+Using endeca_on_demand (1.3.4)
+Using formtastic (2.2.1)
+Using posix-spawn (0.3.6)
+Using grit (2.5.0)
+Using haml_assets (0.2.1) from https://github.com/rejuvenationinc/haml_assets (at master)
+Using has_scope (0.5.1)
+Using highline (1.6.15)
+Using hiredis (0.4.5)
+Using responders (0.9.3)
+Using inherited_resources (1.3.1)
+Using jbuilder (0.9.0)
+Using jquery-rails (2.0.3)
+Using kaminari (0.14.1)
+Using kgio (2.8.0)
+Using kiqstand (1.0.0)
+Using method_source (0.8.1)
+Using subexec (0.2.2)
+Using mini_magick (3.4)
+Using mongoid-audit (0.1.6)
+Using mongoid-tree (1.0.1)
+Using mongoid_magic_counter_cache (0.1.1) from https://github.com/dementrock/mongoid-magic-counter-cache (at master)
+Using bundler (1.2.3)
+Using rails (3.2.12)
+Using mongoid_rails_migrations (1.0.0)
+Using newrelic_rpm (3.6.0.83)
+Using redis (3.0.3)
+Using newrelic-redis (1.4.0)
+Using newrelic_moped (0.0.6)
+Using nori (1.1.3)
+Using oj (2.0.3)
+Using parallel (0.6.2)
+Using periscope (1.0.0)
+Using periscope-mongoid (1.1.0)
+Using pony (1.4)
+Using potatosalad-csv_builder (2.0.3) from https://github.com/rejuvenationinc/csv_builder.git (at master)
+Using powerbar (1.0.11)
+Using slop (3.4.3)
+Using pry (0.9.12)
+Using yard (0.8.3)
+Using pry-doc (0.4.4)
+Using pry-rails (0.2.2)
+Using pry-remote (0.1.6)
+Using rabl (0.7.9)
+Using rack-protection (1.4.0)
+Using rack-rewrite (1.3.3)
+Using rack-ssl-enforcer (0.2.5) from https://github.com/tobmatth/rack-ssl-enforcer (at master)
+Using rainbow (1.1.4)
+Using raindrops (0.10.0)
+Using redcarpet (2.2.2)
+Using redis-store (1.1.3)
+Using redis-rack (1.4.2)
+Using redis-actionpack (3.2.3)
+Using redis-activesupport (3.2.3)
+Using redis-namespace (1.2.1)
+Using redis-rails (3.2.3)
+Using sinatra (1.3.5)
+Using vegas (0.1.11)
+Using resque (1.23.0)
+Using rufus-scheduler (2.0.17)
+Using resque-scheduler (2.0.0)
+Using resque-status (0.4.0)
+Using sanitize (2.0.3)
+Using sidekiq (2.8.0)
+Using sidekiq-pro (0.9.3)
+Using simple_form (2.1.0)
+Using temple (0.5.5)
+Using slim (1.3.6)
+Using state_machine (1.1.2) from https://github.com/pluginaweek/state_machine (at master)
+Using sys-proctable (0.9.2)
+Using uglifier (1.3.0)
+Using unicorn (4.6.2)
+Your bundle is complete! It was installed into ./vendor/bundle
+-----> [staging] Remove public/assets
+-----> [staging] Running 'rake assets:precompile'
+/usr/local/rvm/rubies/ruby-1.9.3-p385/bin/ruby /var/www/4/rejuvenation/staging/vendor/bundle/ruby/1.9.1/bin/rake assets:precompile:all RAILS_ENV=production RAILS_GROUPS=assets
+AssetSync: using /var/www/4/rejuvenation/staging/config/initializers/asset_sync.rb
+AssetSync: using /var/www/4/rejuvenation/staging/config/initializers/asset_sync.rb
+AssetSync: Syncing.
+Using: Directory Search of /var/www/4/rejuvenation/staging/public/assets
+Uploading: assets/admin/application-2d23b4907725b8c2716798bb225664dd.js.gz
+Uploading: assets/admin/batman_view_cache-6fcaf3be637c79a361799102189e5b28.json
+Uploading: assets/admin/views/settings/index-4dc23446dad8c5b36584226871dead55.html
+Uploading: assets/admin/application-2d23b4907725b8c2716798bb225664dd.js
+AssetSync: Done.
+-----> [production] Clone to /var/www/4/rejuvenation/production
+-----> [production] Git checkout cc5d1f3e4f97586c0f64fa9f87f13e48991c1c90
+Checking out files: 100% (2751/2751), done.
+HEAD is now at cc5d1f3 Merge pull request #741 from rejuvenationinc/un-batman_promotions
+-----> [production] Syncing /.gitkeep
+-----> [production] Parsing /.gitkeep
+-----> [production] Syncing /etc/logrotate.d/4-rejuvenation-web
+-----> [production] Parsing /etc/logrotate.d/4-rejuvenation-web
+-----> [production] Syncing /etc/nginx/nginx.conf
+-----> [production] Parsing /etc/nginx/nginx.conf
+-----> [production] Syncing /etc/nginx/certs/4-wildcard.rejuvenation.com.key
+-----> [production] Parsing /etc/nginx/certs/4-wildcard.rejuvenation.com.key
+-----> [production] Syncing /etc/nginx/instances/4-instance.conf
+-----> [production] Parsing /etc/nginx/instances/4-instance.conf
+-----> [production] Syncing /etc/init/4-rejuvenation-workers.conf
+-----> [production] Parsing /etc/init/4-rejuvenation-workers.conf
+-----> [production] Syncing /etc/init/4-rejuvenation-web.conf
+-----> [production] Parsing /etc/init/4-rejuvenation-web.conf
+-----> [production] Syncing /etc/init/4-rejuvenation-workers-reload.conf
+-----> [production] Parsing /etc/init/4-rejuvenation-workers-reload.conf
+-----> [production] Syncing /etc/init/4-rejuvenation-web-reload.conf
+-----> [production] Parsing /etc/init/4-rejuvenation-web-reload.conf
+-----> [production] Syncing config/qu_redis.yml
+-----> [production] Parsing config/qu_redis.yml
+-----> [production] Syncing config/environments/production.rb
+-----> [production] Parsing config/environments/production.rb
+-----> [production] Syncing config/redis_store.yml
+-----> [production] Parsing config/redis_store.yml
+-----> [production] Syncing config/stalker.yml
+-----> [production] Parsing config/stalker.yml
+-----> [production] Syncing config/unicorn.rb
+-----> [production] Parsing config/unicorn.rb
+-----> [production] Syncing config/resque.yml
+-----> [production] Parsing config/resque.yml
+-----> [production] Syncing config/mongoid.yml
+-----> [production] Parsing config/mongoid.yml
+-----> [production] Syncing config/middleware.yml
+-----> [production] Parsing config/middleware.yml
+-----> [production] Syncing config/rejuvenation-workers.pill
+-----> [production] Parsing config/rejuvenation-workers.pill
+-----> [production] Syncing config/rejuvenation-web.pill
+-----> [production] Parsing config/rejuvenation-web.pill
+-----> [production] Syncing config/initializers/asset_sync.rb
+-----> [production] Parsing config/initializers/asset_sync.rb
+-----> [production] Syncing config/initializers/carrierwave.rb
+-----> [production] Parsing config/initializers/carrierwave.rb
+-----> [production] Syncing config/initializers/airbrake.rb
+-----> [production] Parsing config/initializers/airbrake.rb
+-----> [production] Syncing config/initializers/zz_rejuvenation.rb
+-----> [production] Parsing config/initializers/zz_rejuvenation.rb
+-----> [production] Syncing config/force_ssl.yml
+-----> [production] Parsing config/force_ssl.yml
+-----> [production] Syncing config/navy.rb
+-----> [production] Parsing config/navy.rb
+-----> [production] Syncing config/redis_session.yml
+-----> [production] Parsing config/redis_session.yml
+-----> [production] Syncing config/sidekiq.yml
+-----> [production] Parsing config/sidekiq.yml
+-----> [production] Syncing config/bazaarvoice.yml
+-----> [production] Parsing config/bazaarvoice.yml
+-----> [production] Running 'bundle install --deployment --without development test' in '/var/www/4/rejuvenation/production'
+Using rake (10.0.4)
+Using i18n (0.6.4)
+Using multi_json (1.7.2)
+Using activesupport (3.2.12)
+Using builder (3.0.4)
+Using activemodel (3.2.12)
+Using erubis (2.7.0)
+Using journey (1.0.4)
+Using rack (1.4.5)
+Using rack-cache (1.2)
+Using rack-test (0.6.2)
+Using hike (1.2.1)
+Using tilt (1.3.3)
+Using sprockets (2.2.2)
+Using actionpack (3.2.12)
+Using mime-types (1.21)
+Using polyglot (0.3.3)
+Using treetop (1.4.12)
+Using mail (2.4.4)
+Using actionmailer (3.2.12)
+Using active_utils (1.0.5)
+Using json (1.7.7)
+Using money (5.1.1)
+Using nokogiri (1.5.6)
+Using activemerchant (1.31.1)
+Using arel (3.0.2)
+Using tzinfo (0.3.36)
+Using activerecord (3.2.12)
+Using activeresource (3.2.12)
+Using airbrake (3.1.8)
+Using ansi (1.4.3)
+Using excon (0.19.5)
+Using formatador (0.2.4)
+Using net-ssh (2.6.6)
+Using net-scp (1.1.0)
+Using ruby-hmac (0.4.0)
+Using fog (1.10.0)
+Using asset_sync (0.5.0)
+Using rack-ssl (1.3.3)
+Using rdoc (3.12.2)
+Using thor (0.18.1)
+Using railties (3.2.12)
+Using batman-rails (0.0.9)
+Using bcrypt-ruby (3.0.1)
+Using bluecloth (2.2.0)
+Using sass (3.2.6)
+Using sass-rails (3.2.6)
+Using bootstrap-sass-rails (2.3.1.1)
+Using bson (1.8.3)
+Using bson_ext (1.8.3)
+Using carmen (0.2.13)
+Using carrierwave (0.8.0)
+Using moped (1.4.5)
+Using origin (1.0.11)
+Using mongoid (3.0.23)
+Using mongoid-grid_fs (1.3.3)
+Using carrierwave-mongoid (0.3.0.alpha) from https://github.com/jnicklas/carrierwave-mongoid (at mongoid-3.0)
+Using facter (1.6.17)
+Using timers (1.1.0)
+Using celluloid (0.12.4)
+Using chunky_png (1.2.7)
+Using cocoon (1.0.22)
+Using coderay (1.0.9)
+Using coffee-script-source (1.4.0)
+Using execjs (1.4.0)
+Using coffee-script (2.2.0)
+Using haml (3.1.8)
+Using coffee-filter (0.1.3)
+Using coffee-rails (3.2.2)
+Using fssm (0.2.10)
+Using compass (0.12.2)
+Using compass-normalize (1.4.2)
+Using compass-rails (1.0.3)
+Using compass-recipes (0.3.0)
+Using connection_pool (1.0.0)
+Using hashie (1.2.0)
+Using multi_xml (0.5.3)
+Using httparty (0.10.2)
+Using createsend (2.5.1)
+Using curb (0.8.3)
+Using orm_adapter (0.4.0)
+Using warden (1.2.1)
+Using devise (2.2.3)
+Using devise-async (0.6.0)
+Using diff-lcs (1.1.3)
+Using diffy (2.1.0)
+Using draper (0.18.0)
+Using easy_diff (0.0.2)
+Using endeca_on_demand (1.3.4)
+Using formtastic (2.2.1)
+Using posix-spawn (0.3.6)
+Using grit (2.5.0)
+Using haml_assets (0.2.1) from https://github.com/rejuvenationinc/haml_assets (at master)
+Using has_scope (0.5.1)
+Using highline (1.6.15)
+Using hiredis (0.4.5)
+Using responders (0.9.3)
+Using inherited_resources (1.3.1)
+Using jbuilder (0.9.0)
+Using jquery-rails (2.0.3)
+Using kaminari (0.14.1)
+Using kgio (2.8.0)
+Using kiqstand (1.0.0)
+Using method_source (0.8.1)
+Using subexec (0.2.2)
+Using mini_magick (3.4)
+Using mongoid-audit (0.1.6)
+Using mongoid-tree (1.0.1)
+Using mongoid_magic_counter_cache (0.1.1) from https://github.com/dementrock/mongoid-magic-counter-cache (at master)
+Using bundler (1.2.3)
+Using rails (3.2.12)
+Using mongoid_rails_migrations (1.0.0)
+Using newrelic_rpm (3.6.0.83)
+Using redis (3.0.3)
+Using newrelic-redis (1.4.0)
+Using newrelic_moped (0.0.6)
+Using nori (1.1.3)
+Using oj (2.0.3)
+Using parallel (0.6.2)
+Using periscope (1.0.0)
+Using periscope-mongoid (1.1.0)
+Using pony (1.4)
+Using potatosalad-csv_builder (2.0.3) from https://github.com/rejuvenationinc/csv_builder.git (at master)
+Using powerbar (1.0.11)
+Using slop (3.4.3)
+Using pry (0.9.12)
+Using yard (0.8.3)
+Using pry-doc (0.4.4)
+Using pry-rails (0.2.2)
+Using pry-remote (0.1.6)
+Using rabl (0.7.9)
+Using rack-protection (1.4.0)
+Using rack-rewrite (1.3.3)
+Using rack-ssl-enforcer (0.2.5) from https://github.com/tobmatth/rack-ssl-enforcer (at master)
+Using rainbow (1.1.4)
+Using raindrops (0.10.0)
+Using redcarpet (2.2.2)
+Using redis-store (1.1.3)
+Using redis-rack (1.4.2)
+Using redis-actionpack (3.2.3)
+Using redis-activesupport (3.2.3)
+Using redis-namespace (1.2.1)
+Using redis-rails (3.2.3)
+Using sinatra (1.3.5)
+Using vegas (0.1.11)
+Using resque (1.23.0)
+Using rufus-scheduler (2.0.17)
+Using resque-scheduler (2.0.0)
+Using resque-status (0.4.0)
+Using sanitize (2.0.3)
+Using sidekiq (2.8.0)
+Using sidekiq-pro (0.9.3)
+Using simple_form (2.1.0)
+Using temple (0.5.5)
+Using slim (1.3.6)
+Using state_machine (1.1.2) from https://github.com/pluginaweek/state_machine (at master)
+Using sys-proctable (0.9.2)
+Using uglifier (1.3.0)
+Using unicorn (4.6.2)
+Your bundle is complete! It was installed into ./vendor/bundle
+-----> [production] Syncing assets
+-----> [production] Running 'rake db:migrate'
+-----> [production] Running 'rake db:mongoid:create_indexes'
+MONGOID: Created indexes on Order:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:user_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:order_number=>1}, Options: {:background=>true}
+MONGOID: Index: {:number=>1}, Options: {:background=>true}
+MONGOID: Index: {:line_item_count=>1}, Options: {:background=>true}
+MONGOID: Index: {:created_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_sub_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_line_item_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_tax_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_raw_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_total=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Mapping::Simple:
+MONGOID: Index: {:_type=>1, :key=>1}, Options: {:background=>true, :unique=>true, :sparse=>true}
+MONGOID: Index: {:tokens=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:color_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:config_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.attribute_set_id"=>1, :"key.field_property"=>1, :"key.name"=>1, :"key.raw_label"=>1, :"key.type"=>1}, Options: {:background=>true, :name=>"middleware_mapping_section_index"}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1, :"key.field"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.type"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Mapping::Dimension:
+MONGOID: Index: {:_type=>1, :key=>1}, Options: {:background=>true, :unique=>true, :sparse=>true}
+MONGOID: Index: {:tokens=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:color_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:config_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.attribute_set_id"=>1, :"key.field_property"=>1, :"key.name"=>1, :"key.raw_label"=>1, :"key.type"=>1}, Options: {:background=>true, :name=>"middleware_mapping_section_index"}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1, :"key.field"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.type"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Mapping::Section:
+MONGOID: Index: {:_type=>1, :key=>1}, Options: {:background=>true, :unique=>true, :sparse=>true}
+MONGOID: Index: {:tokens=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:color_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:config_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.attribute_set_id"=>1, :"key.field_property"=>1, :"key.name"=>1, :"key.raw_label"=>1, :"key.type"=>1}, Options: {:background=>true, :name=>"middleware_mapping_section_index"}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1, :"key.field"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.type"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Mapping::Vault:
+MONGOID: Index: {:_type=>1, :key=>1}, Options: {:background=>true, :unique=>true, :sparse=>true}
+MONGOID: Index: {:tokens=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:color_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:config_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.attribute_set_id"=>1, :"key.field_property"=>1, :"key.name"=>1, :"key.raw_label"=>1, :"key.type"=>1}, Options: {:background=>true, :name=>"middleware_mapping_section_index"}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1, :"key.field"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.type"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Mapping:
+MONGOID: Index: {:_type=>1, :key=>1}, Options: {:background=>true, :unique=>true, :sparse=>true}
+MONGOID: Index: {:tokens=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:color_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:config_model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.attribute_set_id"=>1, :"key.field_property"=>1, :"key.name"=>1, :"key.raw_label"=>1, :"key.type"=>1}, Options: {:background=>true, :name=>"middleware_mapping_section_index"}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1, :"key.product_id"=>1, :"key.field"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.type"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:"key.attribute_set_id"=>1, :"key.value"=>1}, Options: {:background=>true}
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Message:
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:processed_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:state=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Message::Order:
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:processed_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:state=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Message::Item:
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:processed_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:state=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Middleware::Message::Customer:
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:processed_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:state=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Index ignored on: Address::Embeddable, please define in the root model.
+MONGOID: Created indexes on Address::Relational:
+MONGOID: Index: {:street_1=>1}, Options: {:background=>true}
+MONGOID: Index: {:city=>1}, Options: {:background=>true}
+MONGOID: Index: {:state=>1}, Options: {:background=>true}
+MONGOID: Index: {:zip=>1}, Options: {:background=>true}
+MONGOID: Index: {:country=>1}, Options: {:background=>true}
+MONGOID: Index: {:first_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:last_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:addressable_type=>1}, Options: {:background=>true}
+MONGOID: Index ignored on: Address::Embeddable::Billing, please define in the root model.
+MONGOID: Index ignored on: Address::Embeddable::Request, please define in the root model.
+MONGOID: Index ignored on: Address::Embeddable::Shipping, please define in the root model.
+MONGOID: Created indexes on ModelField:
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:model_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:model_id=>1, :custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on RejuvenationImage:
+MONGOID: Index: {:imageable_id=>1, :_type=>1}, Options: {:background=>true}
+MONGOID: Created indexes on TemplateField:
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:view_template_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:view_template_id=>1, :custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Payment::CreditCard:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Index ignored on: Product::SerializedSimpleMapping, please define in the root model.
+MONGOID: Index ignored on: Product::SerializedVaultMapping, please define in the root model.
+MONGOID: Created indexes on Product::AltImage:
+MONGOID: Index: {:listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:position=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:rejuvenation_image_ids=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Product::Configuration:
+MONGOID: Index: {:label=>1}, Options: {:background=>true}
+MONGOID: Index: {:options=>1}, Options: {:background=>true}
+MONGOID: Index: {:item_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:image_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Product::PopularCombination:
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1, :popularizable_id=>1, :popularizable_type=>1}, Options: {:unique=>true}
+MONGOID: Index ignored on: Product::Dimension, please define in the root model.
+MONGOID: Created indexes on Product::CrossSale:
+MONGOID: Index: {:from_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:to_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Product::Section:
+MONGOID: Index: {:name=>1, :raw_label=>1, :field_property=>1, :type=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Product::Image:
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Product::Reference:
+MONGOID: Index: {:from_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:to_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Item::Simple:
+MONGOID: Index: {:listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:image_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:color_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:config_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:sku=>1}, Options: {:background=>true}
+MONGOID: Index: {:item_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:price=>1}, Options: {:background=>true}
+MONGOID: Index: {:inventory=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1, :listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_id=>1, :color_id=>1, :"product.dax_item_id"=>1}, Options: {:background=>true, :sparse=>true}
+MONGOID: Index: {:size_id=>1, :color_id=>1, :product_id=>1}, Options: {:background=>true, :sparse=>true}
+MONGOID: Created indexes on Item::Complex:
+MONGOID: Index: {:listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:image_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:color_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:config_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:sku=>1}, Options: {:background=>true}
+MONGOID: Index: {:item_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:price=>1}, Options: {:background=>true}
+MONGOID: Index: {:inventory=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1, :listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_id=>1, :color_id=>1, :"product.dax_item_id"=>1}, Options: {:background=>true, :sparse=>true}
+MONGOID: Index: {:size_id=>1, :color_id=>1, :product_id=>1}, Options: {:background=>true, :sparse=>true}
+MONGOID: Created indexes on Item::Configuration:
+MONGOID: Index: {:label=>1}, Options: {:background=>true}
+MONGOID: Index: {:options=>1}, Options: {:background=>true}
+MONGOID: Index: {:item_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:image_id=>1}, Options: {:background=>true}
+MONGOID: Index ignored on: Item::Configuration::Stub, please define in the root model.
+MONGOID: Created indexes on Snip:
+MONGOID: Index: {:number=>1}, Options: {:unique=>true, :background=>true}
+MONGOID: Index: {:url=>1}, Options: {:unique=>true, :background=>true}
+MONGOID: Created indexes on Categorization:
+MONGOID: Index: {:category_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:categorizable_id=>1, :_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_instance_presenter_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1, :categorizable_id=>1, :categorizable_type=>1}, Options: {:background=>true, :unique=>true}
+MONGOID: Index: {:position=>1}, Options: {:background=>true}
+MONGOID: Index ignored on: AttributeGroup, please define in the root model.
+MONGOID: Created indexes on Model:
+MONGOID: Index: {:listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:label=>1}, Options: {:background=>true}
+MONGOID: Index: {:description=>1}, Options: {:background=>true}
+MONGOID: Index: {:created_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:model_type_id=>1, :slug=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Address:
+MONGOID: Index: {:street_1=>1}, Options: {:background=>true}
+MONGOID: Index: {:city=>1}, Options: {:background=>true}
+MONGOID: Index: {:state=>1}, Options: {:background=>true}
+MONGOID: Index: {:zip=>1}, Options: {:background=>true}
+MONGOID: Index: {:country=>1}, Options: {:background=>true}
+MONGOID: Index: {:first_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:last_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:addressable_type=>1}, Options: {:background=>true}
+MONGOID: Created indexes on User:
+MONGOID: Index: {:email=>1}, Options: {:background=>true}
+MONGOID: Index: {:first_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:last_name=>1}, Options: {:background=>true}
+MONGOID: Created indexes on AttributeSet:
+MONGOID: Index: {:parent_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:parent_ids=>1}, Options: {:background=>true}
+MONGOID: Index: {:depth=>1, :position=>1}, Options: {:background=>true}
+MONGOID: Index: {:path=>1}, Options: {:background=>true}
+MONGOID: Index: {:depth=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Product:
+MONGOID: Index: {:default_configuration_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:default_item_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:title=>1}, Options: {:background=>true}
+MONGOID: Index: {:slug=>1}, Options: {:background=>true}
+MONGOID: Index: {:dax_item_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:configurable=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Item:
+MONGOID: Index: {:listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:image_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:color_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:config_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:sku=>1}, Options: {:background=>true}
+MONGOID: Index: {:item_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:price=>1}, Options: {:background=>true}
+MONGOID: Index: {:inventory=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1, :listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:size_id=>1, :color_id=>1, :"product.dax_item_id"=>1}, Options: {:background=>true, :sparse=>true}
+MONGOID: Index: {:size_id=>1, :color_id=>1, :product_id=>1}, Options: {:background=>true, :sparse=>true}
+MONGOID: Created indexes on CategoryField:
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1, :custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on User::Trade:
+MONGOID: Index: {:email=>1}, Options: {:background=>true}
+MONGOID: Index: {:first_name=>1}, Options: {:background=>true}
+MONGOID: Index: {:last_name=>1}, Options: {:background=>true}
+MONGOID: Created indexes on ModelType:
+MONGOID: Index: {:label=>1}, Options: {:unique=>true, :background=>true}
+MONGOID: Index: {:description=>1}, Options: {:background=>true}
+MONGOID: Index: {:created_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Created indexes on LineItem:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:order_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:item_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:configuration_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on CacheSet:
+MONGOID: Index: {:label=>1}, Options: {:unique=>true}
+MONGOID: Index: {:advanced=>1}, Options: {}
+MONGOID: Index: {:redis_database=>1}, Options: {}
+MONGOID: Created indexes on AuditLog:
+MONGOID: Index: {:"association_chain.name"=>1, :"association_chain.id"=>1}, Options: {}
+MONGOID: Created indexes on ItemField:
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:item_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:item_id=>1, :custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Order::History::Error:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:user_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:order_number=>1}, Options: {:background=>true}
+MONGOID: Index: {:number=>1}, Options: {:background=>true}
+MONGOID: Index: {:line_item_count=>1}, Options: {:background=>true}
+MONGOID: Index: {:created_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_sub_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_line_item_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_tax_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_raw_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_total=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Order::Cart:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:user_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:order_number=>1}, Options: {:background=>true}
+MONGOID: Index: {:number=>1}, Options: {:background=>true}
+MONGOID: Index: {:line_item_count=>1}, Options: {:background=>true}
+MONGOID: Index: {:created_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_sub_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_line_item_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_tax_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_raw_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_total=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Order::History:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:user_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:order_number=>1}, Options: {:background=>true}
+MONGOID: Index: {:number=>1}, Options: {:background=>true}
+MONGOID: Index: {:line_item_count=>1}, Options: {:background=>true}
+MONGOID: Index: {:created_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_sub_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_line_item_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_tax_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_raw_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_total=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Order::PublicWishlist:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:user_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:order_number=>1}, Options: {:background=>true}
+MONGOID: Index: {:number=>1}, Options: {:background=>true}
+MONGOID: Index: {:line_item_count=>1}, Options: {:background=>true}
+MONGOID: Index: {:created_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_sub_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_line_item_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_tax_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_raw_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_total=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Order::Wishlist:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:user_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:_type=>1}, Options: {:background=>true}
+MONGOID: Index: {:order_number=>1}, Options: {:background=>true}
+MONGOID: Index: {:number=>1}, Options: {:background=>true}
+MONGOID: Index: {:line_item_count=>1}, Options: {:background=>true}
+MONGOID: Index: {:created_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:updated_at=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_sub_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_line_item_promo_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_tax_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_shipping_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_raw_total=>1}, Options: {:background=>true}
+MONGOID: Index: {:final_total=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Payment:
+MONGOID: Index: {:finalized_at=>1}, Options: {:background=>true}
+MONGOID: Created indexes on ProductField:
+MONGOID: Index: {:custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:product_id=>1, :custom_attribute_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on TaxPercent:
+MONGOID: Index: {:code=>1}, Options: {:unique=>true, :background=>true}
+MONGOID: Index: {:percent=>1}, Options: {:background=>true}
+MONGOID: Index: {:tax_for_ship=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Trigger::User:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Trigger::Amount:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Trigger::Date:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Trigger::Category:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Trigger::Code:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Strategy::FreeShipping:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Strategy::Discount:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Strategy::PercentOff:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Rule:
+MONGOID: Index: {:after=>1}, Options: {}
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:strategy_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:trigger_ids=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Strategy:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion::Trigger:
+MONGOID: Index: {:promotion_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:category_id=>1}, Options: {:background=>true}
+MONGOID: Index ignored on: AttributeGroup::Monkey, please define in the root model.
+MONGOID: Created indexes on Category:
+MONGOID: Index: {:parent_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:parent_ids=>1}, Options: {:background=>true}
+MONGOID: Index: {:depth=>1, :position=>1}, Options: {:background=>true}
+MONGOID: Index: {:path=>1}, Options: {:background=>true}
+MONGOID: Index: {:listed=>1}, Options: {:background=>true}
+MONGOID: Index: {:fullpath=>1}, Options: {:background=>true}
+MONGOID: Index: {:slug=>1}, Options: {:background=>true}
+MONGOID: Created indexes on ViewTemplate:
+MONGOID: Index: {:attribute_set_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:from_template_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:layout_id=>1}, Options: {:background=>true}
+MONGOID: Index: {:name=>1}, Options: {:background=>true}
+MONGOID: Index: {:prefix=>1}, Options: {:background=>true}
+MONGOID: Index: {:partial=>1}, Options: {:background=>true}
+MONGOID: Index: {:locale=>1}, Options: {:background=>true}
+MONGOID: Index: {:formats=>1}, Options: {:background=>true}
+MONGOID: Index: {:handlers=>1}, Options: {:background=>true}
+MONGOID: Index: {:status=>1}, Options: {:background=>true}
+MONGOID: Index: {:from_file=>1}, Options: {:background=>true}
+MONGOID: Created indexes on Promotion:
+MONGOID: Index: {:enabled=>1}, Options: {}
+MONGOID: Index: {:automatic=>1}, Options: {}
+-----> [production] Reloading 4-rejuvenation-workers
+4-rejuvenation-workers-reload stop/waiting
+-----> [production] Reloading 4-rejuvenation-web
+4-rejuvenation-web-reload stop/waiting
+-----> [production] Reloading nginx
+Reloading nginx configuration: nginx.
+-----> [lock] rm -f /tmp/4.rejuvenation.web.lock
+andg:~ andg$ cd git
+andg:git andg$ cd andg
+andg:andg andg$ mkdir _layout
+andg:andg andg$ ls
+CNAME						diyefi_tools.md					gh-pages.md
+README.md					domain_name.md					github-hosting-domain-name-with-cname.md
+_layout						ems.md						index.md
+andg:andg andg$ ls
+CNAME						diyefi_tools.md					gh-pages.md
+README.md					domain_name.md					github-hosting-domain-name-with-cname.md
+_layout						ems.md						index.md
+andg:andg andg$ mv _layout/ _layouts
+andg:andg andg$ git diff
+andg:andg andg$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	_layouts/
+nothing added to commit but untracked files present (use "git add" to track)
+andg:andg andg$ git add _layouts/
+andg:andg andg$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   _layouts/default.html
+#
+andg:andg andg$ git commit -a -m "layout"
+[master 4366a56] layout
+ 1 file changed, 6 insertions(+)
+ create mode 100644 _layouts/default.html
+andg:andg andg$ git branch
+  gh-pages
+* master
+andg:andg andg$ git checkout gh-pages
+Switched to branch 'gh-pages'
+andg:andg andg$ git merge master
+Updating b79ff6f..4366a56
+Fast-forward
+ _layouts/default.html |    6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100644 _layouts/default.html
+andg:andg andg$ git push origin gh_pages
+error: src refspec gh_pages does not match any.
+error: failed to push some refs to 'git@github.com:andg/profile.git'
+andg:andg andg$ git pull origin gh-pages
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 3), reused 0 (delta 0)
+Unpacking objects: 100% (4/4), done.
+From github.com:andg/profile
+ * branch            gh-pages   -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ ems.md |    3 +++
+ 1 file changed, 3 insertions(+)
+andg:andg andg$ git push origin gh_pages
+error: src refspec gh_pages does not match any.
+error: failed to push some refs to 'git@github.com:andg/profile.git'
+andg:andg andg$ git branch
+* gh-pages
+  master
+andg:andg andg$ git checkout master
+Switched to branch 'master'
+andg:andg andg$ git merge gh-pages
+Updating 4366a56..9e62a91
+Fast-forward
+ ems.md |    3 +++
+ 1 file changed, 3 insertions(+)
+andg:andg andg$ git fetch origin
+From github.com:andg/profile
+   b79ff6f..06a46f8  gh-pages   -> origin/gh-pages
+   b79ff6f..a3013e8  master     -> origin/master
+andg:andg andg$ git push origin master
+Counting objects: 8, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 629 bytes, done.
+Total 6 (delta 2), reused 0 (delta 0)
+To git@github.com:andg/profile.git
+   a3013e8..9e62a91  master -> master
+andg:andg andg$ git checkout gh-pages
+Switched to branch 'gh-pages'
+andg:andg andg$ git pull origin master
+From github.com:andg/profile
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+andg:andg andg$ git push origin gh-pages
+Total 0 (delta 0), reused 0 (delta 0)
+To git@github.com:andg/profile.git
+   06a46f8..9e62a91  gh-pages -> gh-pages
+andg:andg andg$ git checkout gh-pages
+Already on 'gh-pages'
+andg:andg andg$ git status
+# On branch gh-pages
+nothing to commit (working directory clean)
+andg:andg andg$
