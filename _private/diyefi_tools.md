@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Setting up tools on mac 10.8.2
 
 ### update xcode in app store
