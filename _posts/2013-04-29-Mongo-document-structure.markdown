@@ -1,6 +1,7 @@
 ---
 layout: efi
 permalink: /mongo
+title: mongodb document structure
 ---
 
 <div class="postbody">so the idea is to talk about mongo db in an implementation prepared to log data that doesn't necessarily have a schema.  So json is a standard that defines data at a state in time.  A sample user of a forum example.<br /><br />Hi my name is Nathan Sparks and I have 42 posts on the diy_efi board.<br /><div class="codewrapper"><div class="codetitle"><b>Code:</b></div><div class="codecontent">user<br />{ _id: BSON_id //a number like 0xb2d91ae6f8416660<br />{first_name: &quot;Nathan&quot;,<br />last_name: &quot;Sparks&quot;,<br />post_count: 42,<br />memberships:<br />{board_name: &quot;diy_efi&quot;}<br />}<br /></div></div><br />Honestly I see the memberships embedded document being deeper but this is for a sample, and I'm trying to keep this simple.  In use in engine management this could be used in combination with the network of sensors standard known as CAN.  It provides banks of sensors so it would look something like this:<br /><div class="codewrapper"><div class="codetitle"><b>Code:</b></div><div class="codecontent">{<br />p_0: 15.0<br />p_1: 0<br />p_5: duh is this getting boring?<br />}</div></div><br />that could be dynamically appended a t value that defines where in the sequence of the logging and that value would be indexed.</div>
