@@ -1,6 +1,6 @@
-----
+---
 layout: efi
-----
+---
 <div id="pageheader">
 	<h2><a class="titles" href="./viewtopic.php?f=45&amp;t=2110">json, CAN</a></h2>
 
